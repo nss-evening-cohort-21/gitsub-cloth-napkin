@@ -17,7 +17,31 @@ const pinnedRepoArray = [
 ]
 
 const repoArray = [
-//Barry takes this one
+  {
+    link: https://github.com/barcher1968/test-repo-18, 
+    description: "Description of the link above.", 
+    tags:, 
+    languages: "JavaScript", 
+    likes: 38, 
+    shares: , 
+    needsHelp: "2 issues needs help", 
+    lastUpdated: "Updated 10 days ago", 
+    starButton: true, 
+    commitHistory:
+  },
+
+  { 
+    link: https://github.com/barcher1968/test-repo-17, 
+    description: "Description of the link above.", 
+    tags:, 
+    languages: "JavaScript", 
+    likes: 38, 
+    shares: , 
+    needsHelp: "2 issues needs help", 
+    lastUpdated: "Updated 10 days ago", 
+    starButton: true, 
+    commitHistory: 
+  }
 ]
 
 const projectsArray = [
