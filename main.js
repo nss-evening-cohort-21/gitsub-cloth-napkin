@@ -13,6 +13,34 @@ const pinnedRepoArray = [
   program: "JavaScript",
   Likes: 17,
   Forks: 4
+},
+{
+  repoName: "business-card",
+  description: "This is a web version of my personal business card.",
+  program: "JavaScript",
+  Likes: 4,
+  Forks: 0
+},
+{
+  repoName: "lab-calculator",
+  description: "This project is the visual elements of a calculator.",
+  program: "JavaScript",
+  Likes: 1,
+  Forks: 0
+},
+{
+  repoName: "product-cards",
+  description: "This project displays some Fender guitars listed for sale and contains information on the products.",
+  program: "JavaScript",
+  Likes: 5,
+  Forks: 0
+},
+{
+  repoName: "link-in-bio",
+  description: "This project mimics linktree and contains a picture of me, my contact information, and button links to my social medias.",
+  program: "JavaScript",
+  Likes: 6,
+  Forks: 1
 }
 ]
 
