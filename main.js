@@ -106,3 +106,26 @@ const packagesArray = [
     description: "this is a sixth description",
   }
 ];
+
+//RENDER TO DOM
+const renderToDom = (divId, htmlToRender) => {
+  const selectedDiv = document.querySelector(divId);
+  selectedDiv.innerHTML = htmlToRender;
+};
+
+//Arrays on the DOM
+const pinnedRepoCardsOnDom = () => {
+  const domString = ``;
+}
+
+const repoCardsOnDom =  () => {
+  const domString = ``;
+}
+
+const projectsOnDom =  () => {
+  const domString = ``;
+}
+
+const packagesOnDom =  () => {
+  const domString = ``;
+}
