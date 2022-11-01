@@ -1,6 +1,7 @@
 //Arrays
 const pinnedRepoArray = [
 {
+  id: 1,
   repoName: "harry-potter-sorting-hat",
   description: "This program randomly assigns people into a Harry Potter house. The user can filter between houses or delete a wizard, sending them into Voldemort's army.",
   program: "JavaScript",
@@ -8,6 +9,7 @@ const pinnedRepoArray = [
   Forks: 2
 },
 {
+  id: 2,
   repoName: "pet-adoption-lab",
   description: "This program allows a user to upload an image and name of a pet and displays the pet on a card. The user can delete a pet once they have found a home.",
   program: "JavaScript",
@@ -15,6 +17,7 @@ const pinnedRepoArray = [
   Forks: 4
 },
 {
+  id: 3,
   repoName: "business-card",
   description: "This is a web version of my personal business card.",
   program: "JavaScript",
@@ -22,6 +25,7 @@ const pinnedRepoArray = [
   Forks: 0
 },
 {
+  id: 4,
   repoName: "lab-calculator",
   description: "This project is the visual elements of a calculator.",
   program: "JavaScript",
@@ -29,6 +33,7 @@ const pinnedRepoArray = [
   Forks: 0
 },
 {
+  id: 5,
   repoName: "product-cards",
   description: "This project displays some Fender guitars listed for sale and contains information on the products.",
   program: "JavaScript",
@@ -36,6 +41,7 @@ const pinnedRepoArray = [
   Forks: 0
 },
 {
+  id: 6,
   repoName: "link-in-bio",
   description: "This project mimics linktree and contains a picture of me, my contact information, and button links to my social medias.",
   program: "JavaScript",
