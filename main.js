@@ -26,4 +26,28 @@ const projectsArray = [
 
 const packagesArray = [
 //James takes this one
-]
+  {
+    cardName: "name1",
+    description: "this is a description",
+  },
+  {
+    cardName: "name2",
+    description: "this is another description",
+  },
+  {
+    cardName: "name3",
+    description: "this is a third description",
+  },
+  {
+    cardName: "name4",
+    description: "this is a fourth description",
+  },
+  {
+    cardName: "name5",
+    description: "this is a fifth description",
+  },
+  {
+    cardName: "name6",
+    description: "this is a sixth description",
+  }
+];
