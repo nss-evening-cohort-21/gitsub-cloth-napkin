@@ -54,9 +54,6 @@ const repoArray = [
 //Barry takes this one
 ]
 
-
-
-//Dro takes this one
 const projectsArray = [
 
 {
