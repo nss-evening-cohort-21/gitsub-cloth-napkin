@@ -2,7 +2,7 @@
 const pinnedRepoArray = [
 {
   id: 1,
-  repoName: "harry-potter-sorting-hat",
+  name: "harry-potter-sorting-hat",
   description: "This program randomly assigns people into a Harry Potter house. The user can filter between houses or delete a wizard, sending them into Voldemort's army.",
   program: "JavaScript",
   Likes: 10,
@@ -10,7 +10,7 @@ const pinnedRepoArray = [
 },
 {
   id: 2,
-  repoName: "pet-adoption-lab",
+  name: "pet-adoption-lab",
   description: "This program allows a user to upload an image and name of a pet and displays the pet on a card. The user can delete a pet once they have found a home.",
   program: "JavaScript",
   Likes: 17,
@@ -18,7 +18,7 @@ const pinnedRepoArray = [
 },
 {
   id: 3,
-  repoName: "business-card",
+  name: "business-card",
   description: "This is a web version of my personal business card.",
   program: "JavaScript",
   Likes: 4,
@@ -26,7 +26,7 @@ const pinnedRepoArray = [
 },
 {
   id: 4,
-  repoName: "lab-calculator",
+  name: "lab-calculator",
   description: "This project is the visual elements of a calculator.",
   program: "JavaScript",
   Likes: 1,
@@ -34,7 +34,7 @@ const pinnedRepoArray = [
 },
 {
   id: 5,
-  repoName: "product-cards",
+  name: "product-cards",
   description: "This project displays some Fender guitars listed for sale and contains information on the products.",
   program: "JavaScript",
   Likes: 5,
@@ -42,7 +42,7 @@ const pinnedRepoArray = [
 },
 {
   id: 6,
-  repoName: "link-in-bio",
+  name: "link-in-bio",
   description: "This project mimics linktree and contains a picture of me, my contact information, and button links to my social medias.",
   program: "JavaScript",
   Likes: 6,
@@ -52,29 +52,29 @@ const pinnedRepoArray = [
 
 const repoArray = [
   {
-    link: https://github.com/barcher1968/test-repo-18, 
+    link: "https://github.com/barcher1968/test-repo-18", 
     description: "Description of the link above.", 
-    tags:, 
+    tags: ``, 
     languages: "JavaScript", 
     likes: 38, 
-    shares: , 
+    shares: ``, 
     needsHelp: "2 issues needs help", 
     lastUpdated: "Updated 10 days ago", 
     starButton: true, 
-    commitHistory:
+    commitHistory: ``
   },
 
   { 
-    link: https://github.com/barcher1968/test-repo-17, 
+    link: "https://github.com/barcher1968/test-repo-17", 
     description: "Description of the link above.", 
-    tags:, 
+    tags: ``, 
     languages: "JavaScript", 
     likes: 38, 
-    shares: , 
+    shares: ``, 
     needsHelp: "2 issues needs help", 
     lastUpdated: "Updated 10 days ago", 
     starButton: true, 
-    commitHistory: 
+    commitHistory: ``
   }
 ]
 
@@ -141,8 +141,19 @@ const renderToDom = (divId, htmlToRender) => {
 };
 
 //Arrays on the DOM
-const pinnedRepoCardsOnDom = () => {
-  const domString = ``;
+const pinnedRepoCardsOnDom = (array) => {
+  let domString = ``;
+  array.forEach((repo) => {
+    domString += `
+      <div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title">${repo.name}</h5>
+          <p class="card-text">${repo.description}</p>
+        </div>
+      </div>
+    `
+  });
+  renderToDom('#pinnedReposSelector', domString);
 }
 
 const repoCardsOnDom =  () => {
@@ -156,3 +167,8 @@ const projectsOnDom =  () => {
 const packagesOnDom =  () => {
   const domString = ``;
 }
+
+const startApp = () => {
+  pinnedRepoCardsOnDom(pinnedRepoArray);
+}
+startApp();
