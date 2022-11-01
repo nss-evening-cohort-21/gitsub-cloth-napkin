@@ -155,7 +155,6 @@ const pinnedRepoCardsOnDom = (array) => {
   });
   renderToDom('#pinnedReposSelector', domString);
 }
-pinnedRepoCardsOnDom(pinnedRepoArray);
 
 const repoCardsOnDom =  () => {
   const domString = ``;
@@ -168,3 +167,8 @@ const projectsOnDom =  () => {
 const packagesOnDom =  () => {
   const domString = ``;
 }
+
+const startApp = () => {
+  pinnedRepoCardsOnDom(pinnedRepoArray);
+}
+startApp();
