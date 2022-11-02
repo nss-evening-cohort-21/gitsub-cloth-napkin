@@ -82,20 +82,20 @@ const projectsArray = [
 
 {
   id:1,
-  repoName: "Example 1",
-  repoDescription: " ",
+  name: "Example 1",
+  description: " ",
 },
 
 {
   id:2,
-  repoName: "my-goals",
-  repoDescription: " ",
+  name: "my-goals",
+  description: " ",
 },
 
 {
   id:3,
-  repoName: "Sample My Goals",
-  repoDescription: "Goals for the NSS Bootcamp",
+  name: "Sample My Goals",
+  description: "Goals for the NSS Bootcamp",
 }
 
 ]
@@ -156,12 +156,42 @@ const pinnedRepoCardsOnDom = (array) => {
   renderToDom('#pinnedReposSelector', domString);
 }
 
-const repoCardsOnDom =  () => {
+const repoCardsOnDom =  (array) => {
   const domString = ``;
 }
 
-const projectsOnDom =  () => {
-  const domString = ``;
+const projectsOnDom =  (array) => {
+
+//   const domStrings = 
+//   `<div class="input-group mb-3">
+//   <input type="text" class="form-control" placeholder="Search all projects" aria-label="Recipient's username" aria-describedby="button-addon2">
+//   <button class="btn btn-outline-secondary" type="button" id="button-addon2">Search</button>
+
+//   <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">sort</button>
+
+//   <ul class="dropdown-menu dropdown-menu-end">
+//     <li><a class="dropdown-item" href="#">Action</a></li>
+//     <li><a class="dropdown-item" href="#">Another action</a></li>
+//     <li><a class="dropdown-item" href="#">Something else here</a></li>
+//   </ul>
+// </div>`
+
+
+  let domString = ``;
+  array.forEach((repo) => {
+    domString += 
+    `<div class="card-body">
+          <h5 class="card-title">Card title</h5>
+  
+          <h3>${repo.name}</h3>
+          <p class="card-text">${repo.description}</p>
+  
+          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+      </div>`
+
+  });
+  renderToDom('#projectsSelector', domString);
+
 }
 
 const packagesOnDom =  () => {
@@ -170,5 +200,6 @@ const packagesOnDom =  () => {
 
 const startApp = () => {
   pinnedRepoCardsOnDom(pinnedRepoArray);
+  projectsOnDom(projectsArray);
 }
 startApp();
