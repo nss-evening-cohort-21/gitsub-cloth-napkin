@@ -140,6 +140,33 @@ const renderToDom = (divId, htmlToRender) => {
   selectedDiv.innerHTML = htmlToRender;
 };
 
+//Main Page Elements
+const filterOnDom = () => {
+  const domstring = `
+    <nav class="navbar navbar-expand-lg bg-light">
+      <div class="container-fluid">
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a id="filter--overview" class="nav-link active" aria-current="page" href="#">Overview</a>
+            </li>
+            <li class="nav-item">
+              <a id="filter--repos" class="nav-link active" aria-current="page" href="#">Repositories</a>
+            </li>
+            <li class="nav-item">
+              <a id="filter--projects" class="nav-link active" aria-current="page" href="#">Projects</a>
+            </li>
+            <li class="nav-item">
+              <a id="filter--packages"class="nav-link active" aria-current="page" href="#">Packages</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  `
+  renderToDom('#filterSelector', domstring);
+}
+
 //Arrays on the DOM
 const pinnedRepoCardsOnDom = (array) => {
   let domString = ``;
@@ -211,10 +238,36 @@ const packagesForm = () => {
   `
 }
 
+//Functions
+const switchPage = () => {
+  const filter = document.querySelector('#filterSelector');
+  filter.addEventListener('click', (e) => {
+    if(e.target.id.includes("filter")) {
+      const [, tab] = e.target.id.split('--');
+      if (tab === 'Overview') {
+        pinnedRepoCardsOnDom(pinnedRepoArray);
+      } else if (tab === 'Repositories') {
+        repoCardsOnDom(repoArray);
+      } else if (tab === 'Projects') {
+        projectsOnDom(projectsArray);
+      } else if (tab === 'Packages') {
+        packagesOnDom(packagesArray);
+      } else {
+        pinnedRepoCardsOnDom();
+      }
+    }
+    if(e.target.id.includes("allOnDom")) {
+      studentCardsFunction(studentsArray);
+    }
+  })
+};
+
 const startApp = () => {
+  filterOnDom();
   pinnedRepoCardsOnDom(pinnedRepoArray);
   packagesOnDom(packagesArray);
   repoCardsOnDom(repoArray);
 
+  switchPage();
 }
 startApp();
