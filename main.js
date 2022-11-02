@@ -140,6 +140,12 @@ const renderToDom = (divId, htmlToRender) => {
   selectedDiv.innerHTML = htmlToRender;
 };
 
+//Query Select
+const overview = document.querySelector('#pinnedReposSelector');
+const repos = document.querySelector('#repoSelectorArea'); 
+const projects = document.querySelector('#projectsSelector');
+const packages = document.querySelector('#packagesSelector');
+
 //Main Page Elements
 const filterOnDom = () => {
   const domstring = `
@@ -238,23 +244,53 @@ const packagesForm = () => {
   `
 }
 
-//Functions
+//Filter pages and start app
+const overviewPage = () => {
+  pinnedRepoCardsOnDom(pinnedRepoArray);
+  overview.hidden = false;
+  repos.hidden = true;
+  projects.hidden = true;
+  packages.hidden = true;
+  console.log('overview')
+}
+
+const repositoriesPage = () => {
+  repoCardsOnDom(repoArray);
+  overview.hidden = true;
+  repos.hidden = false;
+  projects.hidden = true;
+  packages.hidden = true;
+}
+
+const projectsPage = () => {
+  projectsOnDom(projectsArray);
+  overview.hidden = true;
+  repos.hidden = true;
+  projects.hidden = false;
+  packages.hidden = true;
+}
+
+const packagesPage = () => {
+  packagesOnDom(packagesArray);
+  overview.hidden = true;
+  repos.hidden = true;
+  projects.hidden = true;
+  packages.hidden = false;
+}
+
 const switchPage = () => {
   const filter = document.querySelector('#filterSelector');
   filter.addEventListener('click', (e) => {
-    if (e.target.id.includes("filter--overview")) {
-      pinnedRepoCardsOnDom(pinnedRepoArray);
-    } else if (e.target.id.includes('filter--repos')) {
-      repoCardsOnDom(repoArray);
+    if (e.target.id.includes('filter--repos')) {
+      repositoriesPage();
+      console.log('repo clicked');
     } else if (e.target.id.includes('filter--projects')) {
-      projectsOnDom(projectsArray);
+      projectsPage();
     } else if (e.target.id.includes('filter--packages')) {
-      packagesOnDom(packagesArray);
-    } else {
-      pinnedRepoCardsOnDom();
-    }
-    if(e.target.id.includes("allOnDom")) {
-      studentCardsFunction(studentsArray);
+      packagesPage();
+    } else if (e.target.id.includes('filter--overview')) {
+      overviewPage();
+      console.log('overview clicked');
     }
   })
 };
@@ -262,9 +298,6 @@ const switchPage = () => {
 const startApp = () => {
   filterOnDom();
   pinnedRepoCardsOnDom(pinnedRepoArray);
-  packagesOnDom(packagesArray);
-  repoCardsOnDom(repoArray);
-
   switchPage();
 }
 startApp();
