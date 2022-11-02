@@ -156,8 +156,23 @@ const pinnedRepoCardsOnDom = (array) => {
   renderToDom('#pinnedReposSelector', domString);
 }
 
-const repoCardsOnDom =  (array) => {
-  const domString = ``;
+const repoCardsOnDom = (array) => {
+  let domString = ``;
+  array.forEach((repo) => {
+    domString += `
+  <div class="card" style="width: 35rem;">
+    <div class="card-body">
+      <h5 class="card-title">${repo.link}</h5>
+      <h6 class="card-subtitle mb-2 text-muted">${repo.description}</h6>
+      <p class="card-text">${repo.description}</p>
+      <a href="#" class="card-text">${repo.likes}</a>
+      <a href="#" class="card-text">${repo.needsHelp}</a>
+      <a href="#" class="card-text">${repo.lastUpdated}</a>
+    </div>
+  </div>
+  `
+});
+  renderToDom('#reposSelector', domString);
 }
 
 //Function for the projects on DOM
@@ -195,12 +210,41 @@ const projectsOnDom =  (array) => {
 
 }
 
-const packagesOnDom =  () => {
-  const domString = ``;
+const packagesOnDom = (array) => {
+  let domString = ``;
+  array.forEach((repo) => {
+    domString += `
+      <div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title">${repo.cardName}</h5>
+          <p class="card-text">${repo.description}</p>
+          <a href="#" class="btn btn-primary" type="submit">Learn More</a>
+        </div>
+      </div>
+    `
+  });
+  renderToDom('#packagesSelector', domString);
+}
+
+const packagesForm = () => {
+  let domString = `
+  <form id= "newProjectForm">
+    <div class="mb-3">
+      <label for="projectBoardInput1" class="form-label">Project board name</label>
+      <input type="text" class="form-control" id="projectBoardInput1" placeholder="Name here">
+    </div>
+    <div class="mb-3">
+      <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
+      <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+    </div>
+  </form>
+  `
 }
 
 const startApp = () => {
   pinnedRepoCardsOnDom(pinnedRepoArray);
   projectsOnDom(projectsArray);
+  packagesOnDom(packagesArray);
+  repoCardsOnDom(repoArray);
 }
 startApp();
