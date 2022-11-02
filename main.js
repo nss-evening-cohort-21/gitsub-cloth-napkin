@@ -134,13 +134,64 @@ const packagesArray = [
   }
 ];
 
+
+
 //RENDER TO DOM
 const renderToDom = (divId, htmlToRender) => {
   const selectedDiv = document.querySelector(divId);
   selectedDiv.innerHTML = htmlToRender;
 };
 
-//Arrays on the DOM
+//Profile on the DOM
+
+const profileOnDom = () => {
+  console.log("Profile on DOM");
+  let domString = `
+    <div class="card" style="width: 18rem;">
+    <svg class="bd-placeholder-img card-img-top" width="100%" height="180" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Image cap" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#868e96"></rect><text x="50%" y="50%" fill="#dee2e6" dy=".3em">Image</text></svg>
+  
+    <div class="card-body">
+      <h5 class="card-title">Danny Villalobos</h5>
+        <p>crican1</p>
+      <p class="card-text">Originally from Costa Rica but living in Nashville now. Looking to become a proficient developer and a team player.</p>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item"><button type="button" class="btn btn-outline-dark">Follow</button>  <button type="button" class="btn btn-outline-dark"><i class="fa-regular fa-heart"></i>Sponsor</button>  <button type="button" class="btn btn-outline-dark">...</button>
+
+      </li>
+      <li class="list-group-item"><i class="fa-solid fa-user-group"></i>1 follower
+        <i class="fa-regular fa-user-group"></i>0 following
+        <i class="fa-regular fa-star"></i>5 favorites
+      </li>
+      <li class="list-group-item">
+        <i class="fa-regular fa-location-dot"></i>Nashville, TN<br>
+        <i class="fa-solid fa-envelope"></i>asd@gmail.com<br>
+        <i class="fa-solid fa-link"></i>https://github.com/crican1<br>
+        <i class="fa-brands fa-instagram"></i>_claudio.villalobos_
+      </li>
+      <li class="list-group-item">
+        <h2>Highlights</h2>
+        <i class="fa-regular fa-star"></i>"Highlight 1"<br>
+        <i class="fa-regular fa-star"></i>"Highlight 2"<br>
+        <i class="fa-regular fa-star"></i>"Highlight 3"<br> 
+      </li>
+      <li class="list-group-item">
+        <h2>Organizations</h2>
+        <i class="fa-regular fa-star"></i>"Highlight 1"
+        <i class="fa-regular fa-star"></i>"Highlight 2"
+      </li>
+    </ul>
+    <div class="card-body">
+      <h3>Supporters</h3>
+      <i class="fa-regular fa-star"></i>"Highlight 1"<br>
+      <i class="fa-regular fa-star"></i>"Highlight 2"<br>
+      <i class="fa-regular fa-star"></i>"Highlight 3"<br>
+    </div>
+  </div>
+  `;
+  renderToDom('#profileAreaSelector', domString);
+}
+
 const pinnedRepoCardsOnDom = (array) => {
   let domString = ``;
   array.forEach((repo) => {
@@ -169,6 +220,7 @@ const packagesOnDom =  () => {
 }
 
 const startApp = () => {
+  profileOnDom();
   pinnedRepoCardsOnDom(pinnedRepoArray);
 }
 startApp();
