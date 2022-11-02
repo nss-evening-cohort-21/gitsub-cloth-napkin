@@ -156,8 +156,24 @@ const pinnedRepoCardsOnDom = (array) => {
   renderToDom('#pinnedReposSelector', domString);
 }
 
-const repoCardsOnDom =  () => {
-  const domString = ``;
+
+const repoCardsOnDom = (array) => {
+  let domString = ``;
+  array.forEach((repo) => {
+    domString += `
+  <div class="card" style="width: 35rem;">
+    <div class="card-body">
+      <h5 class="card-title">${repo.link}</h5>
+      <h6 class="card-subtitle mb-2 text-muted">${repo.description}</h6>
+      <p class="card-text">${repo.description}</p>
+      <a href="#" class="card-text">${repo.likes}</a>
+      <a href="#" class="card-text">${repo.needsHelp}</a>
+      <a href="#" class="card-text">${repo.lastUpdated}</a>
+    </div>
+  </div>
+  `
+});
+  renderToDom('#reposSelector', domString);
 }
 
 const projectsOnDom =  () => {
@@ -198,5 +214,7 @@ const packagesForm = () => {
 const startApp = () => {
   pinnedRepoCardsOnDom(pinnedRepoArray);
   packagesOnDom(packagesArray);
+  repoCardsOnDom(repoArray);
+
 }
 startApp();
