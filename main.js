@@ -142,6 +142,12 @@ const renderToDom = (divId, htmlToRender) => {
   selectedDiv.innerHTML = htmlToRender;
 };
 
+//Query Select
+const overview = document.querySelector('#pinnedReposSelector');
+const repos = document.querySelector('#repoSelectorArea'); 
+const projects = document.querySelector('#projectsSelector');
+const packages = document.querySelector('#packagesSelector');
+
 //Main Page Elements
 const filterOnDom = () => {
   const domstring = `
@@ -256,7 +262,6 @@ const repoCardsOnDom = (array) => {
   renderToDom('#reposSelector', domString);
 }
 
-//Function for the projects on DOM
 const projectsOnDom =  (array) => {
 
 //   const domStrings = 
@@ -307,6 +312,8 @@ const packagesOnDom = (array) => {
   renderToDom('#packagesSelector', domString);
 }
 
+//Forms on the DOM
+
 const packagesForm = () => {
   let domString = `
   <form id= "newProjectForm">
@@ -323,66 +330,16 @@ const packagesForm = () => {
     </div>
   </form>
   `;
-  renderToDom('#packagesSelector', domString);
+  renderToDom('#packagesFormSelector', domString);
 }
 
-//Functions
-const switchPage = () => {
-  const filter = document.querySelector('#filterSelector');
-  filter.addEventListener('click', (e) => {
-    if(e.target.id.includes("filter")) {
-      const [, tab] = e.target.id.split('--');
-      if (tab === 'Overview') {
-        pinnedRepoCardsOnDom(pinnedRepoArray);
-      } else if (tab === 'Repositories') {
-        repoCardsOnDom(repoArray);
-      } else if (tab === 'Projects') {
-        projectsOnDom(projectsArray);
-      } else if (tab === 'Packages') {
-        packagesOnDom(packagesArray);
-      } else {
-        pinnedRepoCardsOnDom();
-      }
-    }
-    if(e.target.id.includes("allOnDom")) {
-      studentCardsFunction(studentsArray);
-    }
-  })
-};
-
-//Functions
-const switchPage = () => {
-  const filter = document.querySelector('#filterSelector');
-  filter.addEventListener('click', (e) => {
-    if(e.target.id.includes("filter")) {
-      const [, tab] = e.target.id.split('--');
-      if (tab === 'Overview') {
-        pinnedRepoCardsOnDom(pinnedRepoArray);
-      } else if (tab === 'Repositories') {
-        repoCardsOnDom(repoArray);
-      } else if (tab === 'Projects') {
-        projectsOnDom(projectsArray);
-      } else if (tab === 'Packages') {
-        packagesOnDom(packagesArray);
-      } else {
-        pinnedRepoCardsOnDom();
-      }
-    }
-    if(e.target.id.includes("allOnDom")) {
-      studentCardsFunction(studentsArray);
-    }
-  })
-};
-
-const startApp = () => {
-  profileOnDom();
-  filterOnDom();
+//Filter pages and start app
+const overviewPage = () => {
   pinnedRepoCardsOnDom(pinnedRepoArray);
   overview.hidden = false;
   repos.hidden = true;
   projects.hidden = true;
   packages.hidden = true;
-  console.log('overview')
 }
 
 const repositoriesPage = () => {
@@ -403,33 +360,35 @@ const projectsPage = () => {
 
 const packagesPage = () => {
   packagesOnDom(packagesArray);
+  packagesForm();
   overview.hidden = true;
   repos.hidden = true;
   projects.hidden = true;
   packages.hidden = false;
 }
 
-
 const switchPage = () => {
   const filter = document.querySelector('#filterSelector');
   filter.addEventListener('click', (e) => {
     if (e.target.id.includes('filter--repos')) {
       repositoriesPage();
-      console.log('repo clicked');
     } else if (e.target.id.includes('filter--projects')) {
       projectsPage();
     } else if (e.target.id.includes('filter--packages')) {
       packagesPage();
     } else if (e.target.id.includes('filter--overview')) {
       overviewPage();
-      console.log('overview clicked');
     }
   })
 };
 
 const startApp = () => {
+  profileOnDom();
   filterOnDom();
   pinnedRepoCardsOnDom(pinnedRepoArray);
-  switchPage();
+  projectsOnDom(projectsArray);
+  packagesOnDom(packagesArray);
+  repoCardsOnDom(repoArray);
+
 }
 startApp();
