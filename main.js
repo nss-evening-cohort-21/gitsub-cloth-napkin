@@ -142,18 +142,12 @@ const renderToDom = (divId, htmlToRender) => {
   selectedDiv.innerHTML = htmlToRender;
 };
 
-//Query Select
-const overview = document.querySelector('#pinnedReposSelector');
-const repos = document.querySelector('#repoSelectorArea'); 
-const projects = document.querySelector('#projectsSelector');
-const packages = document.querySelector('#packagesSelector');
-
-//Filter on the DOM
+//Main Page Elements
 const filterOnDom = () => {
   const domstring = `
     <nav class="navbar navbar-expand-lg bg-light">
       <div class="container-fluid">
-        <div id="navbarNav">
+        <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item">
               <a id="filter--overview" class="nav-link active" aria-current="page" href="#">Overview</a>
@@ -174,7 +168,6 @@ const filterOnDom = () => {
   `
   renderToDom('#filterSelector', domstring);
 }
-
 
 //Profile on the DOM
 
@@ -333,8 +326,57 @@ const packagesForm = () => {
   renderToDom('#packagesSelector', domString);
 }
 
-//Filter pages and start app
-const overviewPage = () => {
+//Functions
+const switchPage = () => {
+  const filter = document.querySelector('#filterSelector');
+  filter.addEventListener('click', (e) => {
+    if(e.target.id.includes("filter")) {
+      const [, tab] = e.target.id.split('--');
+      if (tab === 'Overview') {
+        pinnedRepoCardsOnDom(pinnedRepoArray);
+      } else if (tab === 'Repositories') {
+        repoCardsOnDom(repoArray);
+      } else if (tab === 'Projects') {
+        projectsOnDom(projectsArray);
+      } else if (tab === 'Packages') {
+        packagesOnDom(packagesArray);
+      } else {
+        pinnedRepoCardsOnDom();
+      }
+    }
+    if(e.target.id.includes("allOnDom")) {
+      studentCardsFunction(studentsArray);
+    }
+  })
+};
+
+//Functions
+const switchPage = () => {
+  const filter = document.querySelector('#filterSelector');
+  filter.addEventListener('click', (e) => {
+    if(e.target.id.includes("filter")) {
+      const [, tab] = e.target.id.split('--');
+      if (tab === 'Overview') {
+        pinnedRepoCardsOnDom(pinnedRepoArray);
+      } else if (tab === 'Repositories') {
+        repoCardsOnDom(repoArray);
+      } else if (tab === 'Projects') {
+        projectsOnDom(projectsArray);
+      } else if (tab === 'Packages') {
+        packagesOnDom(packagesArray);
+      } else {
+        pinnedRepoCardsOnDom();
+      }
+    }
+    if(e.target.id.includes("allOnDom")) {
+      studentCardsFunction(studentsArray);
+    }
+  })
+};
+
+const startApp = () => {
+  profileOnDom();
+  filterOnDom();
   pinnedRepoCardsOnDom(pinnedRepoArray);
   overview.hidden = false;
   repos.hidden = true;
