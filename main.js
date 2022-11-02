@@ -145,7 +145,7 @@ const filterOnDom = () => {
   const domstring = `
     <nav class="navbar navbar-expand-lg bg-light">
       <div class="container-fluid">
-        <div class="collapse navbar-collapse" id="navbarNav">
+        <div id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item">
               <a id="filter--overview" class="nav-link active" aria-current="page" href="#">Overview</a>
@@ -242,19 +242,16 @@ const packagesForm = () => {
 const switchPage = () => {
   const filter = document.querySelector('#filterSelector');
   filter.addEventListener('click', (e) => {
-    if(e.target.id.includes("filter")) {
-      const [, tab] = e.target.id.split('--');
-      if (tab === 'Overview') {
-        pinnedRepoCardsOnDom(pinnedRepoArray);
-      } else if (tab === 'Repositories') {
-        repoCardsOnDom(repoArray);
-      } else if (tab === 'Projects') {
-        projectsOnDom(projectsArray);
-      } else if (tab === 'Packages') {
-        packagesOnDom(packagesArray);
-      } else {
-        pinnedRepoCardsOnDom();
-      }
+    if (e.target.id.includes("filter--overview")) {
+      pinnedRepoCardsOnDom(pinnedRepoArray);
+    } else if (e.target.id.includes('filter--repos')) {
+      repoCardsOnDom(repoArray);
+    } else if (e.target.id.includes('filter--projects')) {
+      projectsOnDom(projectsArray);
+    } else if (e.target.id.includes('filter--packages')) {
+      packagesOnDom(packagesArray);
+    } else {
+      pinnedRepoCardsOnDom();
     }
     if(e.target.id.includes("allOnDom")) {
       studentCardsFunction(studentsArray);
