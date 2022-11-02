@@ -282,14 +282,18 @@ const packagesForm = () => {
   <form id= "newProjectForm">
     <div class="mb-3">
       <label for="projectBoardInput1" class="form-label">Project board name</label>
-      <input type="text" class="form-control" id="projectBoardInput1" placeholder="Name here">
+      <input type="text" class="form-control" id="projectBoardInput1" placeholder="Project name here">
     </div>
     <div class="mb-3">
-      <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
-      <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+      <label for="exampleFormControlTextarea1" class="form-label"></label>
+      <textarea class="form-control" id="exampleFormControlTextarea1" rows="3">Description (optional)</textarea>
+    </div>
+    <div>
+      <button class="btn btn-primary" type="button">Create Project</button>
     </div>
   </form>
-  `
+  `;
+  renderToDom('#packagesSelector', domString);
 }
 
 const startApp = () => {
