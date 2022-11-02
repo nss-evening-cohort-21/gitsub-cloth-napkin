@@ -160,6 +160,7 @@ const repoCardsOnDom =  (array) => {
   const domString = ``;
 }
 
+//Function for the projects on DOM
 const projectsOnDom =  (array) => {
 
 //   const domStrings = 
