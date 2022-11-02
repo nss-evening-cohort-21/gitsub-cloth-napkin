@@ -208,7 +208,8 @@ const packagesForm = () => {
       <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
     </div>
   </form>
-  `
+  `;
+  renderToDom('#packagesSelector', domString);
 }
 
 const startApp = () => {
