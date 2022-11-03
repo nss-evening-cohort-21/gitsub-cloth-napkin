@@ -82,20 +82,20 @@ const projectsArray = [
 
 {
   id:1,
-  repoName: "Example 1",
-  repoDescription: " ",
+  name: "Example 1",
+  description: " ",
 },
 
 {
   id:2,
-  repoName: "my-goals",
-  repoDescription: " ",
+  name: "my-goals",
+  description: " ",
 },
 
 {
   id:3,
-  repoName: "Sample My Goals",
-  repoDescription: "Goals for the NSS Bootcamp",
+  name: "Sample My Goals",
+  description: "Goals for the NSS Bootcamp",
 }
 
 ]
@@ -134,13 +134,100 @@ const packagesArray = [
   }
 ];
 
+
+
 //RENDER TO DOM
 const renderToDom = (divId, htmlToRender) => {
   const selectedDiv = document.querySelector(divId);
   selectedDiv.innerHTML = htmlToRender;
 };
 
+//Query Select
+const overview = document.querySelector('#pinnedReposSelector');
+const repos = document.querySelector('#repoSelectorArea'); 
+const projects = document.querySelector('#projectsSelector');
+const packages = document.querySelector('#packagesSelector');
+
+//Filter on the DOM
+const filterOnDom = () => {
+  const domstring = `
+    <nav class="navbar navbar-expand-lg bg-light">
+      <div class="container-fluid">
+        <div id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a id="filter--overview" class="nav-link active" aria-current="page" href="#">Overview</a>
+            </li>
+            <li class="nav-item">
+              <a id="filter--repos" class="nav-link active" aria-current="page" href="#">Repositories</a>
+            </li>
+            <li class="nav-item">
+              <a id="filter--projects" class="nav-link active" aria-current="page" href="#">Projects</a>
+            </li>
+            <li class="nav-item">
+              <a id="filter--packages"class="nav-link active" aria-current="page" href="#">Packages</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  `
+  renderToDom('#filterSelector', domstring);
+}
+
+
+//Profile on the DOM
+
+const profileOnDom = () => {
+  console.log("Profile on DOM");
+  let domString = `
+    <div class="card" style="width: 18rem;">
+    <svg class="bd-placeholder-img card-img-top" width="100%" height="180" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Image cap" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#868e96"></rect><text x="50%" y="50%" fill="#dee2e6" dy=".3em">Image</text></svg>
+  
+    <div class="card-body">
+      <h5 class="card-title">Danny Villalobos</h5>
+        <p>crican1</p>
+      <p class="card-text">Originally from Costa Rica but living in Nashville now. Looking to become a proficient developer and a team player.</p>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item"><button type="button" class="btn btn-outline-dark">Follow</button>  <button type="button" class="btn btn-outline-dark"><i class="fa-regular fa-heart"></i>Sponsor</button>  <button type="button" class="btn btn-outline-dark">...</button>
+
+      </li>
+      <li class="list-group-item"><i class="fa-solid fa-user-group"></i>1 follower
+        <i class="fa-regular fa-user-group"></i>0 following
+        <i class="fa-regular fa-star"></i>5 favorites
+      </li>
+      <li class="list-group-item">
+        <i class="fa-regular fa-location-dot"></i>Nashville, TN<br>
+        <i class="fa-solid fa-envelope"></i>asd@gmail.com<br>
+        <i class="fa-solid fa-link"></i>https://github.com/crican1<br>
+        <i class="fa-brands fa-instagram"></i>_claudio.villalobos_
+      </li>
+      <li class="list-group-item">
+        <h2>Highlights</h2>
+        <i class="fa-regular fa-star"></i>"Highlight 1"<br>
+        <i class="fa-regular fa-star"></i>"Highlight 2"<br>
+        <i class="fa-regular fa-star"></i>"Highlight 3"<br> 
+      </li>
+      <li class="list-group-item">
+        <h2>Organizations</h2>
+        <i class="fa-regular fa-star"></i>"Highlight 1"
+        <i class="fa-regular fa-star"></i>"Highlight 2"
+      </li>
+    </ul>
+    <div class="card-body">
+      <h3>Supporters</h3>
+      <i class="fa-regular fa-star"></i>"Highlight 1"<br>
+      <i class="fa-regular fa-star"></i>"Highlight 2"<br>
+      <i class="fa-regular fa-star"></i>"Highlight 3"<br>
+    </div>
+  </div>
+  `;
+  renderToDom('#profileAreaSelector', domString);
+}
+
 //Arrays on the DOM
+
 const pinnedRepoCardsOnDom = (array) => {
   let domString = ``;
   array.forEach((repo) => {
@@ -155,17 +242,6 @@ const pinnedRepoCardsOnDom = (array) => {
   });
   renderToDom('#pinnedReposSelector', domString);
 }
-
-// const repoCardsFormOnDom = () => {
-//   let domString = 
-//   `<form>
-// <div class="form-floating mb-3">
-// <input type="text" class="form-control" id="floatingInput">
-// <label for="floatingInput">Find a repository...</label>
-// </div>
-// </form>
-// `}
-// repoCardsFormOnDom(domString);
 
 
 const repoCardsOnDom = (array) => {
@@ -187,19 +263,131 @@ const repoCardsOnDom = (array) => {
   renderToDom('#reposSelector', domString);
 }
 
-const projectsOnDom =  () => {
-  const domString = ``;
+//Function for the projects on DOM
+const projectsOnDom =  (array) => {
+
+//   const domStrings = 
+//   `<div class="input-group mb-3">
+//   <input type="text" class="form-control" placeholder="Search all projects" aria-label="Recipient's username" aria-describedby="button-addon2">
+//   <button class="btn btn-outline-secondary" type="button" id="button-addon2">Search</button>
+
+//   <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">sort</button>
+
+//   <ul class="dropdown-menu dropdown-menu-end">
+//     <li><a class="dropdown-item" href="#">Action</a></li>
+//     <li><a class="dropdown-item" href="#">Another action</a></li>
+//     <li><a class="dropdown-item" href="#">Something else here</a></li>
+//   </ul>
+// </div>`
+
+
+  let domString = ``;
+  array.forEach((repo) => {
+    domString += 
+    `<div class="card-body">
+          <h5 class="card-title">Card title</h5>
+  
+          <h3>${repo.name}</h3>
+          <p class="card-text">${repo.description}</p>
+  
+          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+      </div>`
+
+  });
+  renderToDom('#projectsSelector', domString);
+
 }
 
-const packagesOnDom =  () => {
-  const domString = ``;
+const packagesOnDom = (array) => {
+  let domString = ``;
+  array.forEach((repo) => {
+    domString += `
+      <div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title">${repo.cardName}</h5>
+          <p class="card-text">${repo.description}</p>
+          <a href="#" class="btn btn-primary" type="submit">Learn More</a>
+        </div>
+      </div>
+    `
+  });
+  renderToDom('#packagesSelector', domString);
 }
+
+const packagesForm = () => {
+  let domString = `
+  <form id= "newProjectForm">
+    <div class="mb-3">
+      <label for="projectBoardInput1" class="form-label">Project board name</label>
+      <input type="text" class="form-control" id="projectBoardInput1" placeholder="Project name here">
+    </div>
+    <div class="mb-3">
+      <label for="exampleFormControlTextarea1" class="form-label"></label>
+      <textarea class="form-control" id="exampleFormControlTextarea1" rows="3">Description (optional)</textarea>
+    </div>
+    <div>
+      <button class="btn btn-primary" type="button">Create Project</button>
+    </div>
+  </form>
+  `;
+  renderToDom('#packagesSelector', domString);
+}
+
+//Filter pages and start app
+const overviewPage = () => {
+  pinnedRepoCardsOnDom(pinnedRepoArray);
+  overview.hidden = false;
+  repos.hidden = true;
+  projects.hidden = true;
+  packages.hidden = true;
+  console.log('overview')
+}
+
+const repositoriesPage = () => {
+  repoCardsOnDom(repoArray);
+  overview.hidden = true;
+  repos.hidden = false;
+  projects.hidden = true;
+  packages.hidden = true;
+}
+
+const projectsPage = () => {
+  projectsOnDom(projectsArray);
+  overview.hidden = true;
+  repos.hidden = true;
+  projects.hidden = false;
+  packages.hidden = true;
+}
+
+const packagesPage = () => {
+  packagesOnDom(packagesArray);
+  overview.hidden = true;
+  repos.hidden = true;
+  projects.hidden = true;
+  packages.hidden = false;
+}
+
+
+const switchPage = () => {
+  const filter = document.querySelector('#filterSelector');
+  filter.addEventListener('click', (e) => {
+    if (e.target.id.includes('filter--repos')) {
+      repositoriesPage();
+      console.log('repo clicked');
+    } else if (e.target.id.includes('filter--projects')) {
+      projectsPage();
+    } else if (e.target.id.includes('filter--packages')) {
+      packagesPage();
+    } else if (e.target.id.includes('filter--overview')) {
+      overviewPage();
+      console.log('overview clicked');
+    }
+  })
+};
 
 const startApp = () => {
+  filterOnDom();
   pinnedRepoCardsOnDom(pinnedRepoArray);
-  repoCardsOnDom(repoArray);
-  repoCardsFormOnDom();
-
-
+  switchPage();
 }
 startApp();
