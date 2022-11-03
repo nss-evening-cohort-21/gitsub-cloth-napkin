@@ -156,16 +156,16 @@ const pinnedRepoCardsOnDom = (array) => {
   renderToDom('#pinnedReposSelector', domString);
 }
 
-const repoCardsFormOnDom = () => {
-  let domString = 
-  `<form>
-<div class="form-floating mb-3">
-<input type="text" class="form-control" id="floatingInput">
-<label for="floatingInput">Find a repository...</label>
-</div>
-</form>
-`}
-repoCardsFormOnDom(domString);
+// const repoCardsFormOnDom = () => {
+//   let domString = 
+//   `<form>
+// <div class="form-floating mb-3">
+// <input type="text" class="form-control" id="floatingInput">
+// <label for="floatingInput">Find a repository...</label>
+// </div>
+// </form>
+// `}
+// repoCardsFormOnDom(domString);
 
 
 const repoCardsOnDom = (array) => {
