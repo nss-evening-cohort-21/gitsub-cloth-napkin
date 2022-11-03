@@ -142,6 +142,40 @@ const renderToDom = (divId, htmlToRender) => {
   selectedDiv.innerHTML = htmlToRender;
 };
 
+//Query Select
+const overview = document.querySelector('#pinnedReposSelector');
+const repos = document.querySelector('#repoSelectorArea'); 
+const projects = document.querySelector('#projectsSelector');
+const packages = document.querySelector('#packagesSelector');
+
+//Filter on the DOM
+const filterOnDom = () => {
+  const domstring = `
+    <nav class="navbar navbar-expand-lg bg-light">
+      <div class="container-fluid">
+        <div id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a id="filter--overview" class="nav-link active" aria-current="page" href="#">Overview</a>
+            </li>
+            <li class="nav-item">
+              <a id="filter--repos" class="nav-link active" aria-current="page" href="#">Repositories</a>
+            </li>
+            <li class="nav-item">
+              <a id="filter--projects" class="nav-link active" aria-current="page" href="#">Projects</a>
+            </li>
+            <li class="nav-item">
+              <a id="filter--packages"class="nav-link active" aria-current="page" href="#">Packages</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  `
+  renderToDom('#filterSelector', domstring);
+}
+
+
 //Profile on the DOM
 
 const profileOnDom = () => {
@@ -191,6 +225,8 @@ const profileOnDom = () => {
   `;
   renderToDom('#profileAreaSelector', domString);
 }
+
+//Arrays on the DOM
 
 const pinnedRepoCardsOnDom = (array) => {
   let domString = ``;
@@ -296,11 +332,60 @@ const packagesForm = () => {
   renderToDom('#packagesSelector', domString);
 }
 
-const startApp = () => {
-  profileOnDom();
+//Filter pages and start app
+const overviewPage = () => {
   pinnedRepoCardsOnDom(pinnedRepoArray);
-  projectsOnDom(projectsArray);
-  packagesOnDom(packagesArray);
+  overview.hidden = false;
+  repos.hidden = true;
+  projects.hidden = true;
+  packages.hidden = true;
+  console.log('overview')
+}
+
+const repositoriesPage = () => {
   repoCardsOnDom(repoArray);
+  overview.hidden = true;
+  repos.hidden = false;
+  projects.hidden = true;
+  packages.hidden = true;
+}
+
+const projectsPage = () => {
+  projectsOnDom(projectsArray);
+  overview.hidden = true;
+  repos.hidden = true;
+  projects.hidden = false;
+  packages.hidden = true;
+}
+
+const packagesPage = () => {
+  packagesOnDom(packagesArray);
+  overview.hidden = true;
+  repos.hidden = true;
+  projects.hidden = true;
+  packages.hidden = false;
+}
+
+const switchPage = () => {
+  const filter = document.querySelector('#filterSelector');
+  filter.addEventListener('click', (e) => {
+    if (e.target.id.includes('filter--repos')) {
+      repositoriesPage();
+      console.log('repo clicked');
+    } else if (e.target.id.includes('filter--projects')) {
+      projectsPage();
+    } else if (e.target.id.includes('filter--packages')) {
+      packagesPage();
+    } else if (e.target.id.includes('filter--overview')) {
+      overviewPage();
+      console.log('overview clicked');
+    }
+  })
+};
+
+const startApp = () => {
+  filterOnDom();
+  pinnedRepoCardsOnDom(pinnedRepoArray);
+  switchPage();
 }
 startApp();
