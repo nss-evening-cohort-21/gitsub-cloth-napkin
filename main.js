@@ -243,6 +243,7 @@ const pinnedRepoCardsOnDom = (array) => {
   renderToDom('#pinnedReposSelector', domString);
 }
 
+
 const repoCardsOnDom = (array) => {
   let domString = ``;
   array.forEach((repo) => {
@@ -365,6 +366,7 @@ const packagesPage = () => {
   projects.hidden = true;
   packages.hidden = false;
 }
+
 
 const switchPage = () => {
   const filter = document.querySelector('#filterSelector');
