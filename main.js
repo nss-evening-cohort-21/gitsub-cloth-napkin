@@ -374,10 +374,6 @@ const startApp = () => {
   filterOnDom();
   profileOnDom();
   pinnedRepoCardsOnDom(pinnedRepoArray);
-  projectsOnDom(projectsArray);
-  packagesOnDom(packagesArray);
-  repoCardsOnDom(repoArray);
-
 }
 startApp(); 
  
