@@ -147,6 +147,10 @@ const overview = document.querySelector('#pinnedReposSelector');
 const repos = document.querySelector('#repoSelectorArea'); 
 const projects = document.querySelector('#projectsSelector');
 const packages = document.querySelector('#packagesSelector');
+const overviewForm = document.querySelector('#pinnedReposFormSelector');
+const reposForm = document.querySelector('#reposFormSelector'); 
+const projectsForm = document.querySelector('#projectsFormSelector');
+const packagesForm = document.querySelector('#packagesFormSelector');
 
 //Main Page Elements
 const filterOnDom = () => {
@@ -301,7 +305,7 @@ const packagesOnDom = (array) => {
 
 //Forms on the DOM
 
-const packagesForm = () => {
+const packagesFormFunction = () => {
   let domString = `
   <form id= "newProjectForm">
     <div class="mb-3">
@@ -327,6 +331,10 @@ const overviewPage = () => {
   repos.hidden = true;
   projects.hidden = true;
   packages.hidden = true;
+  overviewForm.hidden = false;
+  reposForm.hidden = true;
+  projectsForm.hidden = true;
+  packagesForm.hidden = true; 
 }
 
 const repositoriesPage = () => {
@@ -335,6 +343,10 @@ const repositoriesPage = () => {
   repos.hidden = false;
   projects.hidden = true;
   packages.hidden = true;
+  overviewForm.hidden = true;
+  reposForm.hidden = false;
+  projectsForm.hidden = true;
+  packagesForm.hidden = true; 
 }
 
 const projectsPage = () => {
@@ -343,15 +355,23 @@ const projectsPage = () => {
   repos.hidden = true;
   projects.hidden = false;
   packages.hidden = true;
+  overviewForm.hidden = true;
+  reposForm.hidden = true;
+  projectsForm.hidden = false;
+  packagesForm.hidden = true; 
 }
 
 const packagesPage = () => {
   packagesOnDom(packagesArray);
-  packagesForm();
+  packagesFormFunction();
   overview.hidden = true;
   repos.hidden = true;
   projects.hidden = true;
   packages.hidden = false;
+  overviewForm.hidden = true;
+  reposForm.hidden = true;
+  projectsForm.hidden = true;
+  packagesForm.hidden = false; 
 }
 
 const switchPage = () => {
@@ -374,10 +394,7 @@ const startApp = () => {
   filterOnDom();
   profileOnDom();
   pinnedRepoCardsOnDom(pinnedRepoArray);
-  projectsOnDom(projectsArray);
-  packagesOnDom(packagesArray);
-  repoCardsOnDom(repoArray);
-
+  switchPage();
 }
 startApp(); 
  
