@@ -188,16 +188,16 @@ const profileOnDom = () => {
       <p>crican1</p>
     <p class="card-text">Originally from Costa Rica but living in Nashville now. Looking to become a proficient developer and a valuable team player.</p>
   </div>
-  <ul class="list-group list-group-flush">
-    <li class="list-group-item"><button type="button" class="btn btn-outline-dark">Follow</button>  <button type="button" class="btn btn-outline-dark"><i class="fa-regular fa-heart"></i>Sponsor</button>  <button type="button" class="btn btn-outline-dark">...</button>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item"><button type="button" class="btn btn-outline-dark">Follow</button>  <button type="button" class="btn btn-outline-dark"><i class="fa-regular fa-heart"></i>Sponsor</button>  <button type="button" class="btn btn-outline-dark">...</button>
 
     </li>
     <li class="list-group-item"><i class="fa-solid fa-user-group"></i> 1 follower
-    <i class="fas fa-users"></i> 0 following<br>
+      <i class="fas fa-users"></i> 0 following<br>
       <i class="fa-regular fa-star"></i> 5 favorites
     </li>
     <li class="list-group-item">
-    <i class="fas fa-map-marker-alt"></i></i> Nashville, TN<br>
+      <i class="fas fa-map-marker-alt"></i></i> Nashville, TN<br>
       <i class="fa-solid fa-envelope"></i> asd@gmail.com<br>
       <i class="fa-solid fa-link"></i> https://github.com/crican1<br>
       <i class="fa-brands fa-instagram"></i> _claudio.villalobos_
@@ -209,18 +209,18 @@ const profileOnDom = () => {
       <i class="fa-regular fa-star"></i>"Highlight 3"
     </li>
     <li class="list-group-item">
-      <h2>Organizations</h2>
-      <i class="fas fa-sitemap"></i></i> "Highlight 1"
-      <i class="fas fa-sitemap"></i></i> "Highlight 2"
+       <h2>Organizations</h2>
+       <i class="fas fa-sitemap"></i></i> "Highlight 1"
+       <i class="fas fa-sitemap"></i></i> "Highlight 2"
     </li>
   </ul>
-  <div class="card-body">
+   <div class="card-body">
     <h3>Supporters</h3>
     <i class="fa-solid fa-people-group"></i> "Highlight 1"<br>
     <i class="fa-solid fa-people-group"></i> "Highlight 2"<br>
     <i class="fa-solid fa-people-group"></i> "Highlight 3"
+   </div>
   </div>
-</div>
 `;
   renderToDom('#profileAreaSelector', domString);
 }
