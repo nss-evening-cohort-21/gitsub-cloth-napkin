@@ -391,4 +391,4 @@ const startApp = () => {
   repoCardsOnDom(repoArray);
 
 }
-startApp();
+startApp(); 
