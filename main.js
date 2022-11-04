@@ -83,13 +83,13 @@ const projectsArray = [
 {
   id:1,
   name: "Example 1",
-  description: " ",
+  description: "No description",
 },
 
 {
   id:2,
   name: "my-goals",
-  description: " ",
+  description: "No description",
 },
 
 {
@@ -265,30 +265,16 @@ const repoCardsOnDom = (array) => {
 
 const projectsOnDom =  (array) => {
 
-//   const domStrings = 
-//   `<div class="input-group mb-3">
-//   <input type="text" class="form-control" placeholder="Search all projects" aria-label="Recipient's username" aria-describedby="button-addon2">
-//   <button class="btn btn-outline-secondary" type="button" id="button-addon2">Search</button>
-
-//   <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">sort</button>
-
-//   <ul class="dropdown-menu dropdown-menu-end">
-//     <li><a class="dropdown-item" href="#">Action</a></li>
-//     <li><a class="dropdown-item" href="#">Another action</a></li>
-//     <li><a class="dropdown-item" href="#">Something else here</a></li>
-//   </ul>
-// </div>`
-
 
   let domString = ``;
   array.forEach((repo) => {
     domString += 
-    `<div class="card-body">
-          <h5 class="card-title">Card title</h5>
+    `<div class="hstack gap-3 card-body">
   
           <h3>${repo.name}</h3>
-          <p class="card-text">${repo.description}</p>
-  
+          <div class="card-text">${repo.description}</div>
+    </div>
+    <div>
           <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
       </div>`
 
