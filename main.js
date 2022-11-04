@@ -310,19 +310,32 @@ const packagesFormFunction = () => {
   <form id= "newPackagesForm">
     <div class="mb-3">
       <label for="packagesBoardInput1" class="form-label">Packages board name</label>
-      <input type="text" class="form-control" id="packagesBoardInput1" placeholder="Packages name here">
+      <input type="text" class="form-control" id="packageCardNameInput" placeholder="Packages name here">
     </div>
     <div class="mb-3">
       <label for="exampleFormControlTextarea1" class="form-label"></label>
-      <textarea class="form-control" id="exampleFormControlTextarea1" rows="3">Description (optional)</textarea>
+      <textarea class="form-control" id="packageDescriptionInput" placeholder="Description here" rows="3"></textarea>
     </div>
     <div>
-      <button class="btn btn-primary" type="button">Create Package</button>
+      <button type="submit" class="btn btn-primary mb-3">Create Package</button>
     </div>
   </form>
   `;
   renderToDom('#packagesFormSelector', domString);
 }
+
+const newPackage = (event) => {
+  event.preventDefault();
+  const newPackageObj = {
+    id: packagesArray.length + 1,
+    cardName: document.querySelector("#packageCardNameInput").value,
+    description: document.querySelector("#packageDescriptionInput").value,
+  }
+  packagesArray.push(newPackageObj);
+  packagesOnDom(packagesArray);
+  document.querySelector('#newPackagesForm').reset();
+}
+packagesForm.addEventListener('submit', newPackage)
 
 //Filter pages and start app
 const overviewPage = () => {
