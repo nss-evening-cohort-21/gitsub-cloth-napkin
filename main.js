@@ -302,7 +302,6 @@ const packagesOnDom = (array) => {
   renderToDom('#packagesSelector', domString);
 }
 
-
 //Function that produces the Pinned Repos form on the DOM
 const pinnedReposFormFunction = () => {
   let domString = `
@@ -397,6 +396,15 @@ const newProject = (event) => {
 }
 projectsForm.addEventListener('submit', newProject)
 
+const projectSearchFunction = () =>
+{
+  let domString =
+  `<div class="input-group mb-3">
+    <input type="text" class="form-control" placeholder="Search all projects" aria-label="Recipient's username" aria-describedby="button-addon2">
+    <button class="btn btn-outline-secondary" type="button" id="button-addon2">Search</button>
+  </div>`;
+  renderToDom('#projectSearchBar', domString)
+}
 
 //Function that produces the Packages form on the DOM
 const packagesFormFunction = () => {
@@ -461,8 +469,9 @@ const repositoriesPage = () => {
 }
 
 const projectsPage = () => {
-  projectsOnDom(projectsArray);
-  projectsFormFunction();
+   projectsOnDom(projectsArray);
+   projectSearchFunction();
+   projectsFormFunction();
   overview.hidden = true;
   repos.hidden = true;
   projects.hidden = false;
