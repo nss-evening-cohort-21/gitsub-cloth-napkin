@@ -354,6 +354,18 @@ const reposFormFunction = () => {
   renderToDom('#reposFormSelector', domString);
 }
 
+const reposSearchFunction = () => {
+  let domString = `
+  <form id = "reposForm">
+    <div class="form-floating mb-3">
+      <input type="text" class="form-control" id="floatingInput">
+      <label for="floatingInput">Find a repository...</label>
+    </div>
+  </form>  
+  `;
+  renderToDom('#reposSearchBarSelector', domString);
+}
+
 //Function that takes the user data and enters it into the Repos Array
 const newRepo = (event) => {
   event.preventDefault();
@@ -506,7 +518,7 @@ const overviewPage = () => {
 }
 
 const repositoriesPage = () => {
-  // reposSearchFunction();
+  reposSearchFunction();
   repoCardsOnDom(repoArray);
   reposFormFunction();
   overview.hidden = true;
