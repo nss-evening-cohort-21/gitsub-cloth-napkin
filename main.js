@@ -498,6 +498,7 @@ const footerBootstrap = () => {
         <a class="nav-link" href="#">About</a>
       </li>
     </ul>
+    <i class="fab fa-github"></i> <i class="far fa-copyright"></i> <span>Copyright Cloth Napkin 2022</span>
   </div>
   `;
   renderToDom('#footerArea', domString);
