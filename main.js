@@ -63,9 +63,44 @@ const repoArray = [
     starButton: true, 
     commitHistory: ``
   },
-
+  {
+    link: "https://github.com/barcher1968/test-repo-19", 
+    description: "Description of the link above.", 
+    tags: ``, 
+    languages: "JavaScript", 
+    likes: 38, 
+    shares: ``, 
+    needsHelp: "2 issues needs help", 
+    lastUpdated: "Updated 10 days ago", 
+    starButton: true, 
+    commitHistory: ``
+  },
+  {
+    link: "https://github.com/barcher1968/test-repo-20", 
+    description: "Description of the link above.", 
+    tags: ``, 
+    languages: "JavaScript", 
+    likes: 38, 
+    shares: ``, 
+    needsHelp: "2 issues needs help", 
+    lastUpdated: "Updated 10 days ago", 
+    starButton: true, 
+    commitHistory: ``
+  },
+  {
+    link: "https://github.com/barcher1968/test-repo-21", 
+    description: "Description of the link above.", 
+    tags: ``, 
+    languages: "JavaScript", 
+    likes: 38, 
+    shares: ``, 
+    needsHelp: "2 issues needs help", 
+    lastUpdated: "Updated 10 days ago", 
+    starButton: true, 
+    commitHistory: ``
+  },
   { 
-    link: "https://github.com/barcher1968/test-repo-17", 
+    link: "https://github.com/barcher1968/test-repo-22", 
     description: "Description of the link above.", 
     tags: ``, 
     languages: "JavaScript", 
