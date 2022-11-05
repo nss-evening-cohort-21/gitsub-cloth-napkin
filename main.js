@@ -439,6 +439,49 @@ const newPackage = (event) => {
 }
 packagesForm.addEventListener('submit', newPackage)
 
+const footerBootstrap = () => {
+  let domString = `
+  <div class="card text-center">
+  <div class="card-footer">
+    <ul class="nav nav-tabs card-footer-tabs">
+      <li class="nav-item">
+        <a class="nav-link" href="#">Terms</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Privacy</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Security</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Status</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Help</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Contact Github</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Pricing</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">API</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Training</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Blog</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">About</a>
+      </li>
+    </ul>
+  </div>
+  `;
+  renderToDom('#footerArea', domString);
+}
 
 //Filter pages and start app
 const overviewPage = () => {
@@ -516,6 +559,7 @@ const startApp = () => {
   profileOnDom();
   pinnedRepoCardsOnDom(pinnedRepoArray);
   switchPage();
+  footerBootstrap();
 }
 startApp(); 
  
