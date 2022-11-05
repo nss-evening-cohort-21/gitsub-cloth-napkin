@@ -335,24 +335,23 @@ const newPinnedRepo = (event) => {
 }
 packagesForm.addEventListener('submit', newPinnedRepo)
 
-//Function that produces the Repos form on the DOM
+//Function that produces the Repos form on the DOM when the Repositories button is pushed
 const reposFormFunction = () => {
   let domString = `
-  <form id= "newPackagesForm">
-    <div class="mb-3">
-      <label for="packagesBoardInput1" class="form-label">Packages board name</label>
-      <input type="text" class="form-control" id="packageCardNameInput" placeholder="Packages name here">
+  <form id = "reposForm">
+      <label for="packagesBoardInput1" class="form-label">New Repository</label>
+      <input type="text" class="form-control" id="repoCardNameInput" placeholder="Repo name here">
     </div>
     <div class="mb-3">
-      <label for="exampleFormControlTextarea1" class="form-label"></label>
-      <textarea class="form-control" id="packageDescriptionInput" placeholder="Description here" rows="3"></textarea>
+      <label for="exampleFormControlTextarea1" class="form-label">Description</label>
+      <textarea class="form-control" id="repoDescriptionInput" placeholder="Description here" rows="3"></textarea>
     </div>
     <div>
-      <button type="submit" class="btn btn-primary mb-3">Create Package</button>
+      <button type="submit" class="btn btn-primary mb-3">Create New Repository</button>
     </div>
-  </form>
+  </form> 
   `;
-  renderToDom('#packagesFormSelector', domString);
+  renderToDom('#reposFormSelector', domString);
 }
 
 //Function that takes the user data and enters it into the Repos Array
