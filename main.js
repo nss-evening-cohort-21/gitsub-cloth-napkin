@@ -277,6 +277,7 @@ const projectsOnDom =  (array) => {
   
           <h3>${repo.name}</h3>
           <div class="card-text">${repo.description}</div>
+          <div <button type="button" class="btn btn-outline-dark">...</button></div>
     </div>
     <div>
           <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
@@ -331,7 +332,7 @@ const newPinnedRepo = (event) => {
     description: document.querySelector("#newPinnedRepoDescriptionInput").value,
   }
   pinnedRepoArray.push(newPinnedRepoObj);
-  repoCardsOnDom(pinnedRepoArray);
+  pinnedRepoCardsOnDom(pinnedRepoArray);
   document.querySelector('#newPinnedRepoForm').reset();
 }
 overviewForm.addEventListener('submit', newPinnedRepo);
