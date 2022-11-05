@@ -246,7 +246,7 @@ const pinnedRepoCardsOnDom = (array) => {
   });
   renderToDom('#pinnedReposSelector', domString);
 }
-
+//This is to build the repos card to show when the Repositories button is pushed
 const repoCardsOnDom = (array) => {
   let domString = ``;
   array.forEach((repo) => {
@@ -336,8 +336,8 @@ const packagesOnDom = (array) => {
 // }
 // packagesForm.addEventListener('submit', newPackage)
 
-//Function that produces the Repos form on the DOM
-const reposFormFunction = () => {
+//Function that produces the Repos form on the DOM when the Repositories button is pushed
+const reposSearchFunction = () => {
   let domString = `
   <form id = "reposForm">
       <label for="packagesBoardInput1" class="form-label">New Repository</label>
@@ -352,7 +352,7 @@ const reposFormFunction = () => {
     </div>
   </form> 
   `;
-  renderToDom('#reposFormSelector', domString);
+  renderToDom('#reposSearchBarSelector', domString);
 }
 //Function that takes the user data and enters it into the Repos Array
 const newRepo = (event) => {
@@ -452,6 +452,7 @@ const overviewPage = () => {
 }
 
 const repositoriesPage = () => {
+  reposSearchFunction();
   repoCardsOnDom(repoArray);
   reposFormFunction();
   overview.hidden = true;
