@@ -305,7 +305,6 @@ const packagesOnDom = (array) => {
   renderToDom('#packagesSelector', domString);
 }
 
-
 //Function that produces the Pinned Repos form on the DOM
 const pinnedReposFormFunction = () => {
   let domString = `
@@ -339,54 +338,29 @@ const newPinnedRepo = (event) => {
 }
 overviewForm.addEventListener('submit', newPinnedRepo);
 
+<<<<<<< HEAD
 
 
 <<<<<<< HEAD
-// const reposFormFunction = () => {
-//   let domString = `
-//   <form id= "newPackagesForm">
-//     <div class="mb-3">
-//       <label for="packagesBoardInput1" class="form-label">Packages board name</label>
-//       <input type="text" class="form-control" id="packageCardNameInput" placeholder="Packages name here">
-//     </div>
-//     <div class="mb-3">
-//       <label for="exampleFormControlTextarea1" class="form-label"></label>
-//       <textarea class="form-control" id="packageDescriptionInput" placeholder="Description here" rows="3"></textarea>
-//     </div>
-//     <div>
-//       <button type="submit" class="btn btn-primary mb-3">Create Package</button>
-//     </div>
-//   </form>
-//   `;
-//   renderToDom('#packagesFormSelector', domString);
-// }
-
-// const newRepo = (event) => {
-//   event.preventDefault();
-//   const newPackageObj = {
-//     id: packagesArray.length + 1,
-//     cardName: document.querySelector("#packageCardNameInput").value,
-//     description: document.querySelector("#packageDescriptionInput").value,
-//   }
-//   packagesArray.push(newPackageObj);
-//   packagesOnDom(packagesArray);
-//   document.querySelector('#newPackagesForm').reset();
-// }
-// packagesForm.addEventListener('submit', newPackage)
-=======
-//Function that produces the Repos form on the DOM when the Repositories button is pushed
-const reposSearchFunction = () => {
+const reposFormFunction = () => {
   let domString = `
-  <form id = "reposForm">
-    <div class="form-floating mb-3">
-      <input type="text" class="form-control" id="floatingInput">
-      <label for="floatingInput">Find a repository...</label>
+  <form id= "newPackagesForm">
+    <div class="mb-3">
+      <label for="packagesBoardInput1" class="form-label">Packages board name</label>
+      <input type="text" class="form-control" id="packageCardNameInput" placeholder="Packages name here">
     </div>
-  </form>  
+    <div class="mb-3">
+      <label for="exampleFormControlTextarea1" class="form-label"></label>
+      <textarea class="form-control" id="packageDescriptionInput" placeholder="Description here" rows="3"></textarea>
+    </div>
+    <div>
+      <button type="submit" class="btn btn-primary mb-3">Create Package</button>
+    </div>
+  </form>
   `;
-  renderToDom('#reposSearchBarSelector', domString);
+  renderToDom('#packagesFormSelector', domString);
 }
-//Function that takes the user data and enters it into the Repos Array
+
 const newRepo = (event) => {
   event.preventDefault();
   const newPackageObj = {
@@ -399,41 +373,77 @@ const newRepo = (event) => {
   document.querySelector('#newPackagesForm').reset();
 }
 packagesForm.addEventListener('submit', newPackage)
->>>>>>> main
 
 
+//Function that produces the Repos form on the DOM when the Repositories button is pushed
+const reposSearchFunction = () => {
+  let domString = `
+  <form id = "reposForm">
+      <label for="packagesBoardInput1" class="form-label">New Repository</label>
+      <input type="text" class="form-control" id="repoCardNameInput" placeholder="Repo name here">
+    </div>
+    <div class="mb-3">
+      <label for="exampleFormControlTextarea1" class="form-label">Description</label>
+      <textarea class="form-control" id="repoDescriptionInput" placeholder="Description here" rows="3"></textarea>
+    </div>
+    <div>
+      <button type="submit" class="btn btn-primary mb-3">Create New Repository</button>
+    </div>
+  </form> 
+  `;
+  renderToDom('#reposSearchBarSelector', domString);
+}
+//Function that takes the user data and enters it into the Repos Array
+const newRepo = (event) => {
+  event.preventDefault();
+  const newRepoObj = {
+    id: repoArray.length + 1,
+    link: document.querySelector("#repoCardNameInput").value,
+    description: document.querySelector("#repoDescriptionInput").value,
+  }
+  repoArray.push(newRepoObj);
+  repoCardsOnDom(repoArray);
+  document.querySelector('#reposFormSelector').reset();
+}
 <<<<<<< HEAD
-// const projectsFormFunction = () => {
-//   let domString = `
-//   <form id= "newPackagesForm">
-//     <div class="mb-3">
-//       <label for="packagesBoardInput1" class="form-label">Packages board name</label>
-//       <input type="text" class="form-control" id="packageCardNameInput" placeholder="Packages name here">
-//     </div>
-//     <div class="mb-3">
-//       <label for="exampleFormControlTextarea1" class="form-label"></label>
-//       <textarea class="form-control" id="packageDescriptionInput" placeholder="Description here" rows="3"></textarea>
-//     </div>
-//     <div>
-//       <button type="submit" class="btn btn-primary mb-3">Create Package</button>
-//     </div>
-//   </form>
-//   `;
-//   renderToDom('#packagesFormSelector', domString);
-// }
+packagesForm.addEventListener('submit', newPackage)
+>>>>>>> main
+=======
+reposForm.addEventListener('submit', newRepo)
+>>>>>>> ed84a1edd60524f7c87c7aaf441c3bc140330deb
 
-// const newProject = (event) => {
-//   event.preventDefault();
-//   const newPackageObj = {
-//     id: packagesArray.length + 1,
-//     cardName: document.querySelector("#packageCardNameInput").value,
-//     description: document.querySelector("#packageDescriptionInput").value,
-//   }
-//   packagesArray.push(newPackageObj);
-//   packagesOnDom(packagesArray);
-//   document.querySelector('#newPackagesForm').reset();
-// }
-// packagesForm.addEventListener('submit', newPackage)
+
+const projectsFormFunction = () => {
+  let domString = `
+  <form id= "newPackagesForm">
+    <div class="mb-3">
+      <label for="packagesBoardInput1" class="form-label">Packages board name</label>
+      <input type="text" class="form-control" id="packageCardNameInput" placeholder="Packages name here">
+    </div>
+    <div class="mb-3">
+      <label for="exampleFormControlTextarea1" class="form-label"></label>
+      <textarea class="form-control" id="packageDescriptionInput" placeholder="Description here" rows="3"></textarea>
+    </div>
+    <div>
+      <button type="submit" class="btn btn-primary mb-3">Create Package</button>
+    </div>
+  </form>
+  `;
+  renderToDom('#packagesFormSelector', domString);
+}
+
+const newProject = (event) => {
+  event.preventDefault();
+  const newPackageObj = {
+    id: packagesArray.length + 1,
+    cardName: document.querySelector("#packageCardNameInput").value,
+    description: document.querySelector("#packageDescriptionInput").value,
+  }
+  packagesArray.push(newPackageObj);
+  packagesOnDom(packagesArray);
+  document.querySelector('#newPackagesForm').reset();
+}
+packagesForm.addEventListener('submit', newPackage)
 =======
 //Function that produces the Projects form on the DOM
 const projectsFormFunction = () => {
@@ -469,39 +479,47 @@ const newProject = (event) => {
 projectsForm.addEventListener('submit', newProject)
 >>>>>>> main
 
+const projectSearchFunction = () =>
+{
+  let domString =
+  `<div class="input-group mb-3">
+    <input type="text" class="form-control" placeholder="Search all projects" aria-label="Recipient's username" aria-describedby="button-addon2">
+    <button class="btn btn-outline-secondary" type="button" id="button-addon2">Search</button>
+  </div>`;
+  renderToDom('#projectSearchBar', domString)
+}
 
-<<<<<<< HEAD
-// const packagesFormFunction = () => {
-//   let domString = `
-//   <form id= "newPackagesForm">
-//     <div class="mb-3">
-//       <label for="packagesBoardInput1" class="form-label">Packages board name</label>
-//       <input type="text" class="form-control" id="packageCardNameInput" placeholder="Packages name here">
-//     </div>
-//     <div class="mb-3">
-//       <label for="exampleFormControlTextarea1" class="form-label"></label>
-//       <textarea class="form-control" id="packageDescriptionInput" placeholder="Description here" rows="3"></textarea>
-//     </div>
-//     <div>
-//       <button type="submit" class="btn btn-primary mb-3">Create Package</button>
-//     </div>
-//   </form>
-//   `;
-//   renderToDom('#packagesFormSelector', domString);
-// }
+const packagesFormFunction = () => {
+  let domString = `
+  <form id= "newPackagesForm">
+    <div class="mb-3">
+      <label for="packagesBoardInput1" class="form-label">Packages board name</label>
+      <input type="text" class="form-control" id="packageCardNameInput" placeholder="Packages name here">
+    </div>
+    <div class="mb-3">
+      <label for="exampleFormControlTextarea1" class="form-label"></label>
+      <textarea class="form-control" id="packageDescriptionInput" placeholder="Description here" rows="3"></textarea>
+    </div>
+    <div>
+      <button type="submit" class="btn btn-primary mb-3">Create Package</button>
+    </div>
+  </form>
+  `;
+  renderToDom('#packagesFormSelector', domString);
+}
 
-// const newPackage = (event) => {
-//   event.preventDefault();
-//   const newPackageObj = {
-//     id: packagesArray.length + 1,
-//     cardName: document.querySelector("#packageCardNameInput").value,
-//     description: document.querySelector("#packageDescriptionInput").value,
-//   }
-//   packagesArray.push(newPackageObj);
-//   packagesOnDom(packagesArray);
-//   document.querySelector('#newPackagesForm').reset();
-// }
-// packagesForm.addEventListener('submit', newPackage)
+const newPackage = (event) => {
+  event.preventDefault();
+  const newPackageObj = {
+    id: packagesArray.length + 1,
+    cardName: document.querySelector("#packageCardNameInput").value,
+    description: document.querySelector("#packageDescriptionInput").value,
+  }
+  packagesArray.push(newPackageObj);
+  packagesOnDom(packagesArray);
+  document.querySelector('#newPackagesForm').reset();
+}
+packagesForm.addEventListener('submit', newPackage)
 =======
 //Function that produces the Packages form on the DOM
 const packagesFormFunction = () => {
@@ -537,6 +555,49 @@ const newPackage = (event) => {
 packagesForm.addEventListener('submit', newPackage)
 >>>>>>> main
 
+const footerBootstrap = () => {
+  let domString = `
+  <div class="card text-center">
+  <div class="card-footer">
+    <ul class="nav nav-tabs card-footer-tabs">
+      <li class="nav-item">
+        <a class="nav-link" href="#">Terms</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Privacy</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Security</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Status</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Help</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Contact Github</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Pricing</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">API</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Training</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Blog</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">About</a>
+      </li>
+    </ul>
+  </div>
+  `;
+  renderToDom('#footerArea', domString);
+}
 
 //Filter pages and start app
 const overviewPage = () => {
@@ -555,7 +616,7 @@ const overviewPage = () => {
 const repositoriesPage = () => {
   reposSearchFunction();
   repoCardsOnDom(repoArray);
-  //reposFormFunction();
+  reposFormFunction();
   overview.hidden = true;
   repos.hidden = false;
   projects.hidden = true;
@@ -567,8 +628,12 @@ const repositoriesPage = () => {
 }
 
 const projectsPage = () => {
+<<<<<<< HEAD
   projectsOnDom(projectsArray);
-  //projectsFormFunction();
+  projectsFormFunction();
+  projectsOnDom(projectsArray);
+  projectSearchFunction();
+  projectsFormFunction();
   overview.hidden = true;
   repos.hidden = true;
   projects.hidden = false;
@@ -580,16 +645,16 @@ const projectsPage = () => {
 }
 
 const packagesPage = () => {
-  packagesOnDom(packagesArray);
- // packagesFormFunction();
-  overview.hidden = true;
-  repos.hidden = true;
-  projects.hidden = true;
-  packages.hidden = false;
-  overviewForm.hidden = true;
-  reposForm.hidden = true;
-  projectsForm.hidden = true;
-  packagesForm.hidden = false; 
+packagesOnDom(packagesArray);
+packagesFormFunction();
+overview.hidden = true;
+repos.hidden = true;
+projects.hidden = true;
+packages.hidden = false;
+overviewForm.hidden = true;
+reposForm.hidden = true;
+projectsForm.hidden = true;
+packagesForm.hidden = false; 
 }
 
 const switchPage = () => {
@@ -614,6 +679,7 @@ const startApp = () => {
   pinnedRepoCardsOnDom(pinnedRepoArray);
   pinnedReposFormFunction();
   switchPage();
+  footerBootstrap();
 }
 startApp(); 
  
