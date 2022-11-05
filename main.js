@@ -578,6 +578,7 @@ const startApp = () => {
   filterOnDom();
   profileOnDom();
   pinnedRepoCardsOnDom(pinnedRepoArray);
+  pinnedReposFormFunction();
   switchPage();
   footerBootstrap();
 }
