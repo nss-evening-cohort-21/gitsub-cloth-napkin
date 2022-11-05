@@ -1,0 +1,12 @@
+#packagesSelector {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+#footerArea {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  font-size: smaller;
+}
