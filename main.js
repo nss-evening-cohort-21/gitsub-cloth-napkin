@@ -354,6 +354,54 @@ const reposFormFunction = () => {
   renderToDom('#reposFormSelector', domString);
 }
 
+//Function that takes the user data and enters it into the New Pinned Repos Array
+const newPinnedRepo = (event) => {
+  event.preventDefault();
+  const newPackageObj = {
+    id: packagesArray.length + 1,
+    cardName: document.querySelector("#packageCardNameInput").value,
+    description: document.querySelector("#packageDescriptionInput").value,
+  }
+  packagesArray.push(newPackageObj);
+  packagesOnDom(packagesArray);
+  document.querySelector('#newPackagesForm').reset();
+}
+packagesForm.addEventListener('submit', newPackage)
+
+
+//Function that produces the Repos form on the DOM
+const reposFormFunction = () => {
+  let domString = `
+  <form id= "newPackagesForm">
+    <div class="mb-3">
+      <label for="packagesBoardInput1" class="form-label">Packages board name</label>
+      <input type="text" class="form-control" id="packageCardNameInput" placeholder="Packages name here">
+    </div>
+    <div class="mb-3">
+      <label for="exampleFormControlTextarea1" class="form-label"></label>
+      <textarea class="form-control" id="packageDescriptionInput" placeholder="Description here" rows="3"></textarea>
+    </div>
+    <div>
+      <button type="submit" class="btn btn-primary mb-3">Create Package</button>
+    </div>
+  </form>
+  `;
+  renderToDom('#packagesFormSelector', domString);
+}
+//Function that takes the user data and enters it into the Repos Array
+const newRepo = (event) => {
+  event.preventDefault();
+  const newPackageObj = {
+    id: packagesArray.length + 1,
+    cardName: document.querySelector("#packageCardNameInput").value,
+    description: document.querySelector("#packageDescriptionInput").value,
+  }
+  packagesArray.push(newPackageObj);
+  packagesOnDom(packagesArray);
+  document.querySelector('#newPackagesForm').reset();
+}
+packagesForm.addEventListener('submit', newPackage)
+
 //Function that takes the user data and enters it into the Repos Array
 const newRepo = (event) => {
   event.preventDefault();
@@ -375,7 +423,7 @@ const projectsFormFunction = () => {
   <form id= "newProjectForm">
     <div class="mb-3">
       <label for="projectCardNameInput" class="form-label">Project board name</label>
-      <input type="text" class="form-control" id="projectDescriptionInput" placeholder="Example 2">
+      <input type="text" class="form-control" id="projectCardNameInput" placeholder="Example 2">
     </div>
     <div class="mb-3">
       <label for="exampleFormControlTextarea1" class="form-label"></label>
@@ -393,7 +441,7 @@ const newProject = (event) => {
   event.preventDefault();
   const newProjectObj = {
     id: projectsArray.length + 1,
-    cardName: document.querySelector("#projectCardNameInput").value,
+    name: document.querySelector("#projectCardNameInput").value,
     description: document.querySelector("#projectDescriptionInput").value,
   }
   projectsArray.push(newProjectObj);
@@ -431,6 +479,7 @@ const packagesFormFunction = () => {
   `;
   renderToDom('#packagesFormSelector', domString);
 }
+
 //Function that takes the user data and enters it into the Packages Array
 const newPackage = (event) => {
   event.preventDefault();
@@ -501,6 +550,7 @@ const overviewPage = () => {
   reposForm.hidden = true;
   projectsForm.hidden = true;
   packagesForm.hidden = true; 
+  projectSeach.hidden = true;
 }
 
 const repositoriesPage = () => {
@@ -518,8 +568,8 @@ const repositoriesPage = () => {
 }
 
 const projectsPage = () => {
+  projectSearchFunction();
    projectsOnDom(projectsArray);
-   projectSearchFunction();
    projectsFormFunction();
   overview.hidden = true;
   repos.hidden = true;
