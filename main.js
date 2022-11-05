@@ -185,10 +185,11 @@ const profileOnDom = () => {
   console.log("Profile on DOM");
   let domString = `
   <div class="card" style="width: 18rem;">
-  <svg class="bd-placeholder-img card-img-top" width="100%" height="180" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Image cap" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#868e96"></rect><text x="50%" y="50%" fill="#dee2e6" dy=".3em">Image</text></svg>
+  <img class="card-img-top" img src="images/Danny Headshot.jpg" alt="avatar">
 
   <div class="card-body">
     <h5 class="card-title">Danny Villalobos</h5>
+      <p>"Dan-ee"</p>
       <p>crican1</p>
     <p class="card-text">Originally from Costa Rica but living in Nashville now. Looking to become a proficient developer and a valuable team player.</p>
   </div>
