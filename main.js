@@ -422,7 +422,7 @@ const projectSearchFunction = () =>
     <input type="text" class="form-control" placeholder="Search all projects" aria-label="Recipient's username" aria-describedby="button-addon2">
     <button class="btn btn-outline-secondary" type="button" id="button-addon2">Search</button>
   </div>`;
-  renderToDom('#projectSearchBar', domString)
+  renderToDom('#projectSearchBar', domString);
 }
 
 //Function that produces the Packages form on the DOM
