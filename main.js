@@ -186,44 +186,47 @@ const profileOnDom = () => {
   let domString = `
   <div class="card" style="width: 18rem;">
   <svg class="bd-placeholder-img card-img-top" width="100%" height="180" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Image cap" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#868e96"></rect><text x="50%" y="50%" fill="#dee2e6" dy=".3em">Image</text></svg>
-
-  <div class="card-body">
-    <h5 class="card-title">Danny Villalobos</h5>
-      <p>crican1</p>
-    <p class="card-text">Originally from Costa Rica but living in Nashville now. Looking to become a proficient developer and a valuable team player.</p>
-  </div>
-    <ul class="list-group list-group-flush">
-      <li class="list-group-item"><button type="button" class="btn btn-outline-dark">Follow</button>  <button type="button" class="btn btn-outline-dark"><i class="fa-regular fa-heart"></i>Sponsor</button>  <button type="button" class="btn btn-outline-dark">...</button>
-
-    </li>
-    <li class="list-group-item"><i class="fa-solid fa-user-group"></i> 1 follower
-      <i class="fas fa-users"></i> 0 following<br>
-      <i class="fa-regular fa-star"></i> 5 favorites
-    </li>
-    <li class="list-group-item">
-      <i class="fas fa-map-marker-alt"></i></i> Nashville, TN<br>
-      <i class="fa-solid fa-envelope"></i> asd@gmail.com<br>
-      <i class="fa-solid fa-link"></i> https://github.com/crican1<br>
-      <i class="fa-brands fa-instagram"></i> _claudio.villalobos_
-    </li>
-    <li class="list-group-item">
-      <h2>Highlights</h2>
-      <i class="fa-regular fa-star"></i>"Highlight 1"<br>
-      <i class="fa-regular fa-star"></i>"Highlight 2"<br>
-      <i class="fa-regular fa-star"></i>"Highlight 3"
-    </li>
-    <li class="list-group-item">
-       <h2>Organizations</h2>
-       <i class="fas fa-sitemap"></i></i> "Highlight 1"
-       <i class="fas fa-sitemap"></i></i> "Highlight 2"
-    </li>
-  </ul>
-   <div class="card-body">
-    <h3>Supporters</h3>
-    <i class="fa-solid fa-people-group"></i> "Highlight 1"<br>
-    <i class="fa-solid fa-people-group"></i> "Highlight 2"<br>
-    <i class="fa-solid fa-people-group"></i> "Highlight 3"
-   </div>
+    <div id="profile-card-body">
+      <div class="profile-card-header">
+        <h5 class="card-title">Danny Villalobos</h5>
+        <p>"Dan-ee"</p>
+        <p><a href="https://github.com/crican1">crican1</a></p>
+        <p class="card-text">Originally from Costa Rica but living in Nashville now. Looking to become a proficient developer and a valuable team player.</p>
+      </div>
+      <div id="profile-card-description">
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item"><button type="button" class="btn btn-outline-dark">Follow</button>  <button type="button" class="btn btn-outline-dark"><i class="fa-regular fa-heart"></i>Sponsor</button>  <button type="button" class="btn btn-outline-dark">...</button>
+          </li>
+          <li class="list-group-item"><i class="fa-solid fa-user-group"></i> 1 follower
+            <i class="fas fa-users"></i> 0 following<br>
+            <i class="fa-regular fa-star"></i> 5 favorites
+          </li>
+          <li class="list-group-item">
+            <i class="fas fa-map-marker-alt"></i></i> Nashville, TN<br>
+            <i class="fa-solid fa-envelope"></i> asd@gmail.com<br>
+            <i class="fa-solid fa-link"></i> https://github.com/crican1<br>
+            <i class="fa-brands fa-instagram"></i> _claudio.villalobos_
+          </li>
+          <li class="list-group-item">
+            <h2>Highlights</h2>
+            <i class="fa-regular fa-star"></i>"Highlight 1"<br>
+            <i class="fa-regular fa-star"></i>"Highlight 2"<br>
+            <i class="fa-regular fa-star"></i>"Highlight 3"
+          </li>
+          <li class="list-group-item">
+            <h2>Organizations</h2>
+            <i class="fas fa-sitemap"></i> NSS Evening Cohort 21<br>
+            <i class="fas fa-sitemap"></i> Glizzy Clan on COD
+          </li>
+        </ul>
+        <div class="card-body">
+          <h3>Supporters</h3>
+          <i class="fa-solid fa-people-group"></i> Bob Ross<br>
+          <i class="fa-solid fa-people-group"></i> Benjamin Franklin<br>
+          <i class="fa-solid fa-people-group"></i> Jake from State Farm
+        </div>
+      </div>
+    </div>
   </div>
 `;
   renderToDom('#profileAreaSelector', domString);
