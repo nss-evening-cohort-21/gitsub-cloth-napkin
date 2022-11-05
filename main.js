@@ -341,21 +341,14 @@ packagesForm.addEventListener('submit', newPackage)
 
 const reposFormFunction = () => {
   let domString = `
-  <form id= "newPackagesForm">
-    <div class="mb-3">
-      <label for="packagesBoardInput1" class="form-label">Packages board name</label>
-      <input type="text" class="form-control" id="packageCardNameInput" placeholder="Packages name here">
+  <form id = "reposForm">
+    <div class="form-floating mb-3">
+      <input type="text" class="form-control" id="floatingInput">
+      <label for="floatingInput">Find a repository...</label>
     </div>
-    <div class="mb-3">
-      <label for="exampleFormControlTextarea1" class="form-label"></label>
-      <textarea class="form-control" id="packageDescriptionInput" placeholder="Description here" rows="3"></textarea>
-    </div>
-    <div>
-      <button type="submit" class="btn btn-primary mb-3">Create Package</button>
-    </div>
-  </form>
+  </form>  
   `;
-  renderToDom('#packagesFormSelector', domString);
+  renderToDom('#reposFormSelector', domString);
 }
 
 const newRepo = (event) => {
