@@ -333,10 +333,10 @@ const newPinnedRepo = (event) => {
   packagesOnDom(packagesArray);
   document.querySelector('#newPackagesForm').reset();
 }
-packagesForm.addEventListener('submit', newPackage)
+packagesForm.addEventListener('submit', newPinnedRepo)
 
 //Function that produces the Repos form on the DOM when the Repositories button is pushed
-const reposSearchFunction = () => {
+const reposFormFunction = () => {
   let domString = `
   <form id = "reposForm">
       <label for="packagesBoardInput1" class="form-label">New Repository</label>
@@ -351,8 +351,9 @@ const reposSearchFunction = () => {
     </div>
   </form> 
   `;
-  renderToDom('#reposSearchBarSelector', domString);
+  renderToDom('#reposFormSelector', domString);
 }
+
 //Function that takes the user data and enters it into the Repos Array
 const newRepo = (event) => {
   event.preventDefault();
@@ -503,7 +504,7 @@ const overviewPage = () => {
 }
 
 const repositoriesPage = () => {
-  reposSearchFunction();
+  // reposSearchFunction();
   repoCardsOnDom(repoArray);
   reposFormFunction();
   overview.hidden = true;
