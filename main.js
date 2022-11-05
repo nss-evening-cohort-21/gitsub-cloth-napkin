@@ -246,7 +246,7 @@ const pinnedRepoCardsOnDom = (array) => {
   });
   renderToDom('#pinnedReposSelector', domString);
 }
-
+//This is to build the repos card to show when the Repositories button is pushed
 const repoCardsOnDom = (array) => {
   let domString = ``;
   array.forEach((repo) => {
@@ -302,7 +302,6 @@ const packagesOnDom = (array) => {
   renderToDom('#packagesSelector', domString);
 }
 
-
 //Function that produces the Pinned Repos form on the DOM
 const pinnedReposFormFunction = () => {
   let domString = `
@@ -322,6 +321,39 @@ const pinnedReposFormFunction = () => {
   `;
   renderToDom('#packagesFormSelector', domString);
 }
+//Function that takes the user data and enters it into the New Pinned Repos Array
+const newPinnedRepo = (event) => {
+  event.preventDefault();
+  const newPackageObj = {
+    id: packagesArray.length + 1,
+    cardName: document.querySelector("#packageCardNameInput").value,
+    description: document.querySelector("#packageDescriptionInput").value,
+  }
+  packagesArray.push(newPackageObj);
+  packagesOnDom(packagesArray);
+  document.querySelector('#newPackagesForm').reset();
+}
+packagesForm.addEventListener('submit', newPinnedRepo)
+
+//Function that produces the Repos form on the DOM when the Repositories button is pushed
+const reposFormFunction = () => {
+  let domString = `
+  <form id = "reposForm">
+      <label for="packagesBoardInput1" class="form-label">New Repository</label>
+      <input type="text" class="form-control" id="repoCardNameInput" placeholder="Repo name here">
+    </div>
+    <div class="mb-3">
+      <label for="exampleFormControlTextarea1" class="form-label">Description</label>
+      <textarea class="form-control" id="repoDescriptionInput" placeholder="Description here" rows="3"></textarea>
+    </div>
+    <div>
+      <button type="submit" class="btn btn-primary mb-3">Create New Repository</button>
+    </div>
+  </form> 
+  `;
+  renderToDom('#reposFormSelector', domString);
+}
+
 //Function that takes the user data and enters it into the New Pinned Repos Array
 const newPinnedRepo = (event) => {
   event.preventDefault();
@@ -369,6 +401,20 @@ const newRepo = (event) => {
   document.querySelector('#newPackagesForm').reset();
 }
 packagesForm.addEventListener('submit', newPackage)
+
+//Function that takes the user data and enters it into the Repos Array
+const newRepo = (event) => {
+  event.preventDefault();
+  const newRepoObj = {
+    id: repoArray.length + 1,
+    link: document.querySelector("#repoCardNameInput").value,
+    description: document.querySelector("#repoDescriptionInput").value,
+  }
+  repoArray.push(newRepoObj);
+  repoCardsOnDom(repoArray);
+  document.querySelector('#reposFormSelector').reset();
+}
+reposForm.addEventListener('submit', newRepo)
 
 
 //Function that produces the Projects form on the DOM
@@ -448,6 +494,49 @@ const newPackage = (event) => {
 }
 packagesForm.addEventListener('submit', newPackage)
 
+const footerBootstrap = () => {
+  let domString = `
+  <div class="card text-center">
+  <div class="card-footer">
+    <ul class="nav nav-tabs card-footer-tabs">
+      <li class="nav-item">
+        <a class="nav-link" href="#">Terms</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Privacy</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Security</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Status</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Help</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Contact Github</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Pricing</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">API</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Training</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Blog</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">About</a>
+      </li>
+    </ul>
+  </div>
+  `;
+  renderToDom('#footerArea', domString);
+}
 
 //Filter pages and start app
 const overviewPage = () => {
@@ -465,6 +554,7 @@ const overviewPage = () => {
 }
 
 const repositoriesPage = () => {
+  // reposSearchFunction();
   repoCardsOnDom(repoArray);
   reposFormFunction();
   overview.hidden = true;
@@ -525,6 +615,7 @@ const startApp = () => {
   profileOnDom();
   pinnedRepoCardsOnDom(pinnedRepoArray);
   switchPage();
+  footerBootstrap();
 }
 startApp(); 
  
