@@ -186,6 +186,8 @@ const overviewForm = document.querySelector('#pinnedReposFormSelector');
 const reposForm = document.querySelector('#reposFormSelector'); 
 const projectsForm = document.querySelector('#projectsFormSelector');
 const packagesForm = document.querySelector('#packagesFormSelector');
+const repoSearchBar = document.querySelector('#reposSearchBarSelector');
+const projectsSearchBar = document.querySelector('#projectSearchBar');
 
 //Main Page Elements
 const filterOnDom = () => {
@@ -552,7 +554,8 @@ const overviewPage = () => {
   reposForm.hidden = true;
   projectsForm.hidden = true;
   packagesForm.hidden = true; 
-  projectSeach.hidden = true;
+  repoSearchBar.hidden = true;
+  projectsSearchBar.hidden = true;
 }
 
 const repositoriesPage = () => {
@@ -567,6 +570,8 @@ const repositoriesPage = () => {
   reposForm.hidden = false;
   projectsForm.hidden = true;
   packagesForm.hidden = true; 
+  repoSearchBar.hidden = false;
+  projectsSearchBar.hidden = true;
 }
 
 const projectsPage = () => {
@@ -581,6 +586,8 @@ const projectsPage = () => {
   reposForm.hidden = true;
   projectsForm.hidden = false;
   packagesForm.hidden = true; 
+  repoSearchBar.hidden = true;
+  projectsSearchBar.hidden = false;
 }
 
 const packagesPage = () => {
@@ -594,6 +601,8 @@ const packagesPage = () => {
   reposForm.hidden = true;
   projectsForm.hidden = true;
   packagesForm.hidden = false; 
+  repoSearchBar.hidden = true;
+  projectsSearchBar.hidden = true;
 }
 
 const switchPage = () => {
@@ -621,4 +630,3 @@ const startApp = () => {
   footerBootstrap();
 }
 startApp(); 
- 
