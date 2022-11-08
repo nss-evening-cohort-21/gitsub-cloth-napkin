@@ -225,8 +225,8 @@ const profileOnDom = () => {
   <div class="card-body">
     <h5 class="card-title">Danny Villalobos</h5>
       <p>"Dan-ee"</p>
-      <p>crican1</p>
-    <p class="card-text">Originally from Costa Rica but living in Nashville now. Looking to become a proficient developer and a valuable team player.</p>
+      <p><a href="https://github.com/crican1" class="card-link" >crican1</a></p>
+      <p class="card-text">Originally from Costa Rica but living in Nashville now. Looking to become a proficient developer and a valuable team player.</p>
   </div>
     <ul class="list-group list-group-flush">
       <li class="list-group-item"><button type="button" class="btn btn-outline-dark">Follow</button>  <button type="button" class="btn btn-outline-dark"><i class="fa-regular fa-heart"></i>Sponsor</button>  <button type="button" class="btn btn-outline-dark">...</button>
@@ -244,21 +244,21 @@ const profileOnDom = () => {
     </li>
     <li class="list-group-item">
       <h2>Highlights</h2>
-      <i class="fa-regular fa-star"></i>"Highlight 1"<br>
-      <i class="fa-regular fa-star"></i>"Highlight 2"<br>
-      <i class="fa-regular fa-star"></i>"Highlight 3"
+      <i class="fa-regular fa-star"></i>Sorting Hat<br>
+      <i class="fa-regular fa-star"></i>Pet Product Cards<br>
+      <i class="fa-regular fa-star"></i>Link in Bio
     </li>
     <li class="list-group-item">
        <h2>Organizations</h2>
-       <i class="fas fa-sitemap"></i></i> "Highlight 1"
-       <i class="fas fa-sitemap"></i></i> "Highlight 2"
+       <i class="fas fa-sitemap"></i></i> NSS E21<br>
+       <i class="fas fa-sitemap"></i></i> GLZZY Clan on COD
     </li>
   </ul>
    <div class="card-body">
     <h3>Supporters</h3>
-    <i class="fa-solid fa-people-group"></i> "Highlight 1"<br>
-    <i class="fa-solid fa-people-group"></i> "Highlight 2"<br>
-    <i class="fa-solid fa-people-group"></i> "Highlight 3"
+    <i class="fa-solid fa-people-group"></i> Bob Ross<br>
+    <i class="fa-solid fa-people-group"></i> Benjamin Franklin<br>
+    <i class="fa-solid fa-people-group"></i> Bill Gates
    </div>
   </div>
 `;
