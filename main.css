@@ -11,6 +11,12 @@
   font-size: smaller;
 }
 
+
+.project-board-1 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
 #body {
   display: flex;
   margin: 0px;
@@ -49,4 +55,5 @@
 
 .searchBar {
   margin: 1%;
+
 }

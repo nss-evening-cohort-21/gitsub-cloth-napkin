@@ -139,33 +139,33 @@ const packagesArray = [
 //James takes this one
   {
     id: 1,
-    cardName: "name1",
-    description: "this is a description",
+    cardName: "Docker",
+    description: "A software platform used for building applications based on containers - small and lightweight execution environments.",
   },
   {
     id: 2,
-    cardName: "name2",
-    description: "this is another description",
+    cardName: "Apache Maven",
+    description: "A default package manager used for the Java Programming language and the Java runtime environment.",
   },
   {
     id: 3,
-    cardName: "name3",
-    description: "this is a third description",
+    cardName: "NuGet",
+    description: "A free and open source package manager used for the Microsoft development platforms including .NET.",
   },
   {
     id: 4,
-    cardName: "name4",
-    description: "this is a fourth description",
+    cardName: "RubyGems",
+    description: "A standard format for distributing Ruby programs and libraries used for the Ruby programming language.",
   },
   {
     id: 5,
-    cardName: "name5",
-    description: "this is a fifth description",
+    cardName: "npm",
+    description: "A package manager for JavaScript, included with Node.js. npm makes it easy for developers to share and reuse code.",
   },
   {
     id: 6,
-    cardName: "name6",
-    description: "this is a sixth description",
+    cardName: "Containers",
+    description: "A single place for your team to manage Docker images and decide who can see and access your images.",
   }
 ];
 
@@ -310,11 +310,10 @@ const projectsOnDom =  (array) => {
   let domString = ``;
   array.forEach((repo) => {
     domString += 
-    `<div class="hstack gap-3 card-body">
-  
-          <h3>${repo.name}</h3>
-          <div class="card-text">${repo.description}</div>
-          <div <button type="button" class="btn btn-outline-dark">...</button></div>
+    `<div class="project-board-1">
+        <h3>${repo.name}</h3>
+        <div class="card-text">${repo.description}</div>
+        <div class="d-grid gap-2 d-md-flex justify-content-md-end" <button type="button" class="btn btn-outline-dark text-right btn-outline-secondary">...</button></div>
     </div>
     <div>
           <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
