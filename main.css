@@ -14,8 +14,12 @@
 
 .project-board-1 {
   display: flex;
-  flex-direction: row;
+  flex-wrap: wrap;
   justify-content: space-between;
+} 
+
+#ellipsisBtn {
+  margin-right: 20px;
 }
 
 #body {
