@@ -344,7 +344,7 @@ const projectsOnDom =  (array) => {
           <h3>${repo.name}</h3>
           <div class="card-text">${repo.description}</div>
           <div <button type="button" class="btn btn-outline-dark">...</button></div>
-    `<div class="project-board-1">
+        <div class="project-board-1">
         <h3>${repo.name}</h3>
         <div class="card-text">${repo.description}</div>
         <div class="d-grid gap-2 d-md-flex justify-content-md-end" <button type="button" class="btn btn-outline-dark text-right btn-outline-secondary">...</button></div>
@@ -455,6 +455,7 @@ reposForm.addEventListener('submit', newRepo)
 
 
 //Function that produces the Projects form on the DOM
+
 const projectsFormFunction = () => {
   let domString = `
   <form id= "newProjectForm">
