@@ -118,18 +118,48 @@ const projectsArray = [
 {
   id:1,
   name: "Example 1",
+  mygoals: [
+    {
+      goals1: 'Week 1',
+      url1: 'https://docs.google.com/presentation/d/1PYyUUfrBTU4zQ8iVeBiWV-Sb3nxAspUl1vaqsbEsjwA/edit#slide=id.gfea571188b_0_1'
+    },
+    {
+      goals2: 'Week 2',
+      url2: 'https://docs.google.com/presentation/d/1PYyUUfrBTU4zQ8iVeBiWV-Sb3nxAspUl1vaqsbEsjwA/edit#slide=id.g16e1c5ec13f_0_0',
+    }
+  ],
   description: "No description",
 },
 
 {
   id:2,
   name: "my-goals",
+  mygoals: [
+    {
+      goals: 'Week 1',
+      url: 'https://docs.google.com/presentation/d/1PYyUUfrBTU4zQ8iVeBiWV-Sb3nxAspUl1vaqsbEsjwA/edit#slide=id.gfea571188b_0_1'
+    },
+    {
+      goals2: 'Week 2',
+      url: 'https://docs.google.com/presentation/d/1PYyUUfrBTU4zQ8iVeBiWV-Sb3nxAspUl1vaqsbEsjwA/edit#slide=id.g16e1c5ec13f_0_0',
+    }
+  ],
   description: "No description",
 },
 
 {
   id:3,
   name: "Sample My Goals",
+  mygoals: [
+    {
+      goals: 'Week 1',
+      url: 'https://docs.google.com/presentation/d/1PYyUUfrBTU4zQ8iVeBiWV-Sb3nxAspUl1vaqsbEsjwA/edit#slide=id.gfea571188b_0_1'
+    },
+    {
+      goals2: 'Week 2',
+      url: 'https://docs.google.com/presentation/d/1PYyUUfrBTU4zQ8iVeBiWV-Sb3nxAspUl1vaqsbEsjwA/edit#slide=id.g16e1c5ec13f_0_0',
+    }
+  ],
   description: "Goals for the NSS Bootcamp",
 }
 
@@ -310,19 +340,24 @@ const projectsOnDom =  (array) => {
   let domString = ``;
   array.forEach((repo) => {
     domString += 
+    `<div class="hstack gap-3 card-body">
+          <h3>${repo.name}</h3>
+          <div class="card-text">${repo.description}</div>
+          <div <button type="button" class="btn btn-outline-dark">...</button></div>
     `<div class="project-board-1">
         <h3>${repo.name}</h3>
         <div class="card-text">${repo.description}</div>
         <div class="d-grid gap-2 d-md-flex justify-content-md-end" <button type="button" class="btn btn-outline-dark text-right btn-outline-secondary">...</button></div>
+
     </div>
     <div>
           <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
       </div>`
-
-  });
+  }),
+  
   renderToDom('#projectsSelector', domString);
-
 }
+
 
 const packagesOnDom = (array) => {
   let domString = ``;
