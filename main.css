@@ -1,0 +1,64 @@
+#packagesSelector {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+#footerArea {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  font-size: smaller;
+}
+
+
+.project-board-1 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+} 
+
+#ellipsisBtn {
+  margin-right: 20px;
+}
+
+#body {
+  display: flex;
+  margin: 0px;
+}
+
+#rightSide {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  width: 75%;
+  margin: 1%;
+  flex: 0 1 80%;
+}
+
+.cardsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  margin: 1%;
+  gap: 5%;
+}
+
+.cardsContainer > * {
+  flex: 0 1 40%;
+  margin: 2%;
+}
+
+.cardsContainer > * * {
+  margin: 2%;
+}
+
+#profileAreaSelector {
+  margin: 1%;
+  flex: 0 1 20%;
+}
+
+.searchBar {
+  margin: 1%;
+
+}
